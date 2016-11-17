@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="fake_camera"      default="true" />
+	<arg name="fake"             default="$(arg fake_camera)" />
+	<arg name="fake_image"       default="$(find apc16delft_fake_components)/data/tote.png" />
+	<arg name="fake_point_cloud" default="$(find apc16delft_fake_components)/data/tote.pcd" />
+	<arg name="fake_cloud"       default="$(arg fake_point_cloud)" />
+
+	<!-- Start the ensenso camera. -->
+	<group unless="$(arg fake)">
+		<node name="tote_camera" pkg="apc16delft_camera" type="ensenso_camera" output="screen">
+			<param name="camera_frame"           value="world" />
+			<param name="ensenso_param_file"     value="$(find apc16delft_camera)/param/tote/ensenso.json" />
+			<param name="overlay_param_file"     value="$(find apc16delft_camera)/param/tote/overlay.json" />
+			<param name="overlay_param_set_file" value="$(find apc16delft_camera)/param/tote/overlay.ini" />
+			<param name="serial"                 value="160639" type="str" />
+		</node>
+	</group>
+
+	<group if="$(arg fake)">
+		<node name="tote_camera" type="apc16delft_fake_components_camera" pkg="apc16delft_fake_components" output="screen">
+			<param name="image"        value="$(arg fake_image)" />
+			<param name="point_cloud"  value="$(arg fake_cloud)" />
+			<param name="camera_frame" value="world" />
+			<rosparam file="$(find apc16delft_fake_components)/data/calibration.yaml" command="load"/>
+		</node>
+	</group>
+</launch>
+

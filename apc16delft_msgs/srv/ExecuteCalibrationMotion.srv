@@ -1,0 +1,5 @@
+geometry_msgs/PoseStamped calibration_pose # The target calibration pose.
+---
+Error error
+
+#int32 E_SRV_BASE = 10400

@@ -1,0 +1,13 @@
+<launch>
+
+	<arg name="namespace" default="workspace_analysis_results"/>
+	<arg name="file" default="workspace_analysis_results.txt"/>
+	<arg name="smooth_color" default="true"/>
+
+	<group ns="$(arg namespace)">
+	  	<node name="moveit_workspace_reader" pkg="moveit_workspace_analysis" type="workspace_reader_node" respawn="true" output="screen">
+	    	<param name="filename" value="$(find moveit_workspace_analysis)/$(arg file)" />
+	    	<param name="smooth_color" value="$(arg smooth_color)"/>
+	  	</node>
+  	</group>
+</launch>

@@ -1,0 +1,73 @@
+clorox_utility_brush:
+    # PCL model.
+    model_path: "package://apc16delft_data/models/clorox_utility_brush.pcd"
+
+    # prune distance
+    reachability_prune_distance: 0.015
+
+    # pre-grasp offset
+    pre_grasp_offset: 0.05
+
+    # Center of Mass.
+    CoM:
+        position: {x: 0.0, y: 0.0, z: 0.0}
+
+    # List of sample spaces in which we can generate grasps.
+    sample_space:
+        - shape: "bar"
+          vacuum: True
+          generate: False
+          point_distance: 0.01
+          edge_clearing: 0.02
+          intersection_threshold: 0.005
+          dimensions: {x: 0.075, y: 0.09, z: 0.001}
+          origin:
+              position: {x: 0.0, y: 0.0, z: 0.005}
+              orientation: {r: 0.0, p: 0.0, y: 0.0}
+
+        - shape: "bar"
+          vacuum: True
+          generate: False
+          point_distance: 0.001
+          edge_clearing: 0.002
+          intersection_threshold: 0.015
+          dimensions: {x: 0.065, y: 0.005, z: 0.005}
+          origin:
+              position: {x: 0.0, y: -0.05, z: -0.01}
+              orientation: {r: 0.0, p: 0.0, y: 0.0}
+
+        - shape: "bar"
+          vacuum: True
+          generate: False
+          point_distance: 0.001
+          edge_clearing: 0.002
+          intersection_threshold: 0.015
+          dimensions: {x: 0.065, y: 0.005, z: 0.005}
+          origin:
+              position: {x: 0.0, y: 0.05, z: -0.01}
+              orientation: {r: 0.0, p: 0.0, y: 0.0}
+
+        - shape: "bar"
+          vacuum: True
+          generate: True
+          point_distance: 0.01
+          edge_clearing: 0.02
+          intersection_threshold: 0.03
+          dimensions: {x: 0.065, y: 0.09, z: 0.06}
+          origin:
+              position: {x: 0.0, y: 0.0, z: -0.01}
+              orientation: {r: 0.0, p: 0.0, y: 0.0}
+
+          # Additional hand crafted grasp candidates for in object frame.
+          # rpy follows z-y-x convention in degrees.
+          extra_candidates:
+              - score: 1.0
+                pose:
+                    position:    {x: 0.0, y: 0.04, z: 0.06}
+                    orientation: {r: 0.0, p: 3.14159, y: 0.0}
+
+    difficulty: 0
+    bonus: 2
+    fragility:  'medium'
+    weight:     'low'
+    size:       'medium'

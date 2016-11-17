@@ -1,0 +1,6 @@
+int8 bin_index                                       # The index of the current bin.
+uint8 object_type                                    # The object type
+geometry_msgs/PoseStamped bin_pose                   # Pose of the bin in world frame.
+apc16delft_msgs/GraspCandidate[] candidates          # List of candidates to prune.
+---
+apc16delft_msgs/GraspCandidate[] pruned_candidates   # Pruned list of candidates.

@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<robot name="apc16delft" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:property name="pi" value="3.1415926535897"/>
+
+<xacro:macro name="apc16delft_gripper" params="prefix">
+	<link name="${prefix}body">
+		<visual>
+			<geometry><mesh filename="package://apc16delft_description/meshes/gripper/calibration_tool.stl" /></geometry>
+			<material name="dr_white"><color rgba="0.9 0.9 0.9 1" /></material>
+			<origin rpy="0 ${-0.5 * pi} 0" />
+		</visual>
+		<collision>
+			<geometry><mesh filename="package://apc16delft_description/meshes/gripper/calibration_tool_collision.stl" /></geometry>
+			<origin rpy="0 ${-0.5 * pi} 0" />
+		</collision>
+
+		<visual>
+			<geometry><cylinder length="0.028" radius="0.05"/></geometry>
+			<material name="dr_gold"><color rgba="0.85 0.65 0.125 1" /></material>
+			<origin xyz="0 0 -0.014" />
+		</visual>
+		<collision>
+			<geometry><cylinder length="0.028" radius="0.05"/></geometry>
+			<origin xyz="0 0 -0.014" />
+		</collision>
+	</link>
+
+	<link name="${prefix}calibration_rotation"/>
+	<joint name="${prefix}calibration_rotation" type="fixed">
+		<parent link="${prefix}body"/>
+		<child link="${prefix}calibration_rotation"/>
+		<origin xyz="0 0.051 0.09" rpy="0 0 ${30 / 180 * pi}"/>
+	</joint>
+
+	<link name="${prefix}calibration_tag"/>
+
+	<joint name="${prefix}calibration_tag" type="fixed">
+		<parent link="${prefix}calibration_rotation"/>
+		<child link="${prefix}calibration_tag"/>
+		<origin xyz="0 0.051 0.09" rpy="${0.5 * pi} 0 0"/>
+	</joint>
+
+	<link name="${prefix}tool0" />
+	<link name="${prefix}tool1" />
+	<link name="${prefix}vacuum" />
+
+	<joint name="${prefix}tool0" type="fixed">
+		<parent link="${prefix}body"/>
+		<child link="${prefix}tool0"/>
+	</joint>
+	<joint name="${prefix}tool1" type="fixed">
+		<parent link="${prefix}body"/>
+		<child link="${prefix}tool1"/>
+	</joint>
+	<joint name="${prefix}vacuum" type="fixed">
+		<parent link="${prefix}body"/>
+		<child link="${prefix}vacuum"/>
+	</joint>
+</xacro:macro>
+
+</robot>

@@ -1,0 +1,32 @@
+kleenex_paper_towels:
+    # PCL model.
+    model_path: "package://apc16delft_data/models/kleenex_paper_towels.pcd"
+
+    # prune distance
+    reachability_prune_distance: 0.05
+
+    # pre-grasp offset
+    pre_grasp_offset: 0.05
+
+    # Center of Mass.
+    CoM:
+        position: {x: 0.0, y: 0.0, z: 0.0}
+
+    # List of sample spaces in which we can generate grasps.
+    sample_space:
+        - shape: "cylinder"
+          vacuum: True
+          generate: True
+          point_distance: 0.02
+          edge_clearing: 0.02
+          intersection_threshold: 0.02
+          dimensions: {radius: 0.065, height: 0.20}
+          origin:
+              position: {x: 0.0, y: 0.0, z: 0.0}
+              orientation: {r: 0.0, p: 0.0, y: 0.0}
+
+    difficulty: 0
+    bonus: 1
+    fragility:    'no'
+    weight:     'medium'
+    size:       'large'

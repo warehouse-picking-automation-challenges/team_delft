@@ -1,0 +1,11 @@
+# tote pose (w.r.t. ?) and dimensions.
+# TODO: Sensible position and orientation
+# TODO: Models if necessary
+# TODO: Bug Bas for actual size data
+
+model_path: "package://apc16delft_data/models/bins/bin_0_9.pcd"
+collision_model_path: "package://apc16delft_data/models/bins/bin_0_9.pcd"
+pose:
+    position:    {x: -0.40159, y: -0.438, z: 1.5537}
+    orientation: {x: 0, y: 0, z: 0, w: 1}
+dimensions:      {x: 0.56, y: 0.20, z: 0.35}

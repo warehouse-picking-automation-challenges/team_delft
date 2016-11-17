@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+	<name>apc16delft_object_detection</name>
+	<version>0.0.0</version>
+	<description>The apc16delft_object_detection package</description>
+
+	<maintainer email="j.a.vanegmond@tudelft.nl">Jeff van Egmond</maintainer>
+	<license>TODO</license>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<depend>rospy</depend>
+	<depend>tf</depend>
+	<depend>visualization_msgs</depend>
+	<depend>apc16delft_msgs</depend>
+</package>

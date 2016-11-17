@@ -1,0 +1,12 @@
+manipulator_tool1:
+  kinematics_solver: trac_ik_kinematics_plugin/TRAC_IKKinematicsPlugin
+  kinematics_solver_timeout: 0.005
+  solve_type: Distance
+manipulator_tool0:
+  kinematics_solver: trac_ik_kinematics_plugin/TRAC_IKKinematicsPlugin
+  kinematics_solver_timeout: 0.005
+  solve_type: Distance
+manipulator_tool2:
+  kinematics_solver: trac_ik_kinematics_plugin/TRAC_IKKinematicsPlugin
+  kinematics_solver_timeout: 0.005
+  solve_type: Distance

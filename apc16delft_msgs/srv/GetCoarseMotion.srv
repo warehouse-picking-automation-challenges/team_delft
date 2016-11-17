@@ -1,0 +1,7 @@
+MasterPoseDescriptor start  # The starting master pose.
+MasterPoseDescriptor target # The target master pose.
+---
+Error error
+trajectory_msgs/JointTrajectory trajectory # The coarse trajectory
+
+#int32 E_SRV_BASE = 11700

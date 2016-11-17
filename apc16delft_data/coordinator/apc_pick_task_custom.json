@@ -1,0 +1,18 @@
+{
+    "bin_contents": {
+        "bin_E": [
+            "easter_turtle_sippy_cup",
+            "elmers_washable_no_run_school_glue",
+            "folgers_classic_roast_coffee",
+            "expo_dry_erase_board_eraser"
+
+        ]
+    },
+    "tote_contents": [],
+    "work_order": [
+        {
+            "bin": "bin_E",
+            "item": "expo_dry_erase_board_eraser"
+        }
+    ]
+}

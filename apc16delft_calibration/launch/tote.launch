@@ -1,0 +1,27 @@
+<launch>
+	<arg name="rviz" default="false" />
+
+	<node type="apc16delft_calibration" pkg="apc16delft_calibration" name="calibration" output="screen">
+		<param name="fixed_frame"       value="world"                   />
+		<param name="robot_frame"       value="robot_tool0"             />
+		<param name="attached_frame"    value="gripper_calibration_tag" />
+		<param name="camera_moving"     value="false"                   />
+		<param name="camera_namespace"  value="/tote_camera"            />
+
+		<param name="samples"       value="60"     />
+		<param name="radius_min"    value="-1.05"  />
+		<param name="radius_max"    value="-1.12"  />
+		<param name="radius_steps"  value="3"      />
+		<param name="dome_height"   value="0.006"  />
+	</node>
+
+	<!--
+	<include file="$(find apc16delft_simulation)/launch/simulator.launch" />
+
+	<include file="$(find apc16delft_camera)/launch/camera.launch">
+		<arg name="fake_camera" value="false" />
+	</include>
+-->
+	<node if="$(arg rviz)" type="rviz" pkg="rviz" name="rviz" args="-d '$(find apc16delft_calibration)/config.rviz'" />
+</launch>
+<!-- vim: set ft=xml: -->

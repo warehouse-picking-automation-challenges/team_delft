@@ -1,0 +1,14 @@
+controller_list:
+  - name: ''
+    action_ns: joint_trajectory_action
+    type: FollowJointTrajectory
+    joints: ['rail_y', 'robot_joint_s', 'robot_joint_l', 'robot_joint_e', 'robot_joint_u', 'robot_joint_r', 'robot_joint_b', 'robot_joint_t']
+# - name: sia20f/sia20f_r1_controller
+#   action_ns: joint_trajectory_action
+#   type: FollowJointTrajectory
+#   joints: ['robot_joint_s','robot_joint_l','robot_joint_e','robot_joint_u','robot_joint_r','robot_joint_b','robot_joint_t']
+# - name: sia20f/sia20f_b1_controller
+#   action_ns: joint_trajectory_action
+#   type: FollowJointTrajectory
+#   joints: ['rail_y']
+#      

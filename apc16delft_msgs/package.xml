@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+	<name>apc16delft_msgs</name>
+	<version>0.0.0</version>
+	<description>The apc16delft_msgs package</description>
+	<license>Apache v2.0</license>
+	<maintainer email="maarten@de-vri.es">Maarten de Vries</maintainer>
+
+	<author email="maarten@de-vri.es">Maarten de Vries</author>
+	<author email="j.e.t.tan@tudelft.nl">j.e.t.tan</author>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<build_depend>dr_base</build_depend>
+	<build_depend>message_generation</build_depend>
+	<exec_depend>message_runtime</exec_depend>
+	<depend>trajectory_msgs</depend>
+	<depend>gemeotry_msgs</depend>
+	<depend>octomap_msgs</depend>
+	<depend>sensor_msgs</depend>
+	<depend>shape_msgs</depend>
+	<depend>std_msgs</depend>
+</package>

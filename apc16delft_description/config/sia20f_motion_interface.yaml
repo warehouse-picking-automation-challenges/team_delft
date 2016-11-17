@@ -1,0 +1,9 @@
+topic_list:
+    - name: sia20f_r1_controller
+      ns: sia20f
+      group: 0
+      joints: ['robot_joint_s','robot_joint_l','robot_joint_e','robot_joint_u','robot_joint_r','robot_joint_b','robot_joint_t']
+    - name: sia20f_b1_controller
+      ns: sia20f
+      group: 1
+      joints: ['rail_y']

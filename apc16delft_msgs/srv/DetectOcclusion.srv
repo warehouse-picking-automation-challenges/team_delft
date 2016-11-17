@@ -1,0 +1,9 @@
+sensor_msgs/PointCloud2 target_model # The fitted model of the target
+ObjectDetection[] non_target_objects # The other objects in the scene
+geometry_msgs/Vector3 direction      # Occlusion direction
+---
+Occlusion[] occlusions               # Occlusion information
+float64 occlusion_percentage         # The total percentage of the model that is occluded
+Error error                          # Reports any errors if encountered.
+#int32 E_SRV_BASE = 11400
+int32 E_INPUT_SANITY = 11401         # Error for bad input cloud

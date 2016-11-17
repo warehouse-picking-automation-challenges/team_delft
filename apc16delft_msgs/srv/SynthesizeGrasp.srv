@@ -1,0 +1,12 @@
+Object object                              # The object to plan a grasp for.
+int8 bin_index                            # The index of the current bin.
+geometry_msgs/PoseStamped object_pose      # The estimated pose of the object.
+geometry_msgs/PoseStamped bin_pose         # The estimated pose of the bin.
+sensor_msgs/PointCloud2 point_cloud        # Cropped and processed point cloud containing the detected object.
+geometry_msgs/Pose cloud_transform         # Transformation from robot_tool0 to world for the point cloud
+---
+int32 error                                # An error code or 0 for success.
+string message                             # A human readable error or success message.
+GraspCandidate[] candidates                # The generated grasp candidates.
+#TODO: Use Error message type for output
+#int32 E_SRV_BASE = 11200

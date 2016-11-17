@@ -1,0 +1,4 @@
+---
+int32 result_code
+#TODO: Use Error message type for output
+#int32 E_SRV_BASE = 11000

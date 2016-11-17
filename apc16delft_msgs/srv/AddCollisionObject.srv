@@ -1,0 +1,6 @@
+int32                     bin_index               # Index of the bin
+geometry_msgs/PoseStamped pose_collision_object   # Pose of the collision object to be published
+ ---
+Error                     error                   # Error code with message or SUCCESS.
+
+

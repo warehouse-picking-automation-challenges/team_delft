@@ -1,0 +1,5 @@
+---
+geometry_msgs/PoseStamped camera_pose  # Pose of camera in frame given in apc16delft_msgs/InitializeCalibration.
+geometry_msgs/PoseStamped pattern_pose # Pose of pattern in frame given in apc16delft_msgs/InitializeCalibration.
+int32 iterations                       # Number of iterations used for this calibration.
+float64 reprojection_error             # Reprojection error per pattern point over all collected patterns of the final solution.

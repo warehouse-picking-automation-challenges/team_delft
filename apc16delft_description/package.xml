@@ -1,0 +1,12 @@
+<package format="2">
+	<name>apc16delft_description</name>
+	<version>0.1.0</version>
+	<description>Robot description for the GoPick Delft 2016 Amazon picking challenge project.</description>
+	<license>Apache v2.0</license>
+
+	<maintainer email="maarten@de-vri.es">Maarten de Vries</maintainer>
+	<author email="maarten@de-vri.es">Maarten de Vries</author>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<exec_depend>motoman_sia_support</exec_depend>
+</package>

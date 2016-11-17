@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="urdf" default="sia20f" />
+
+	<rosparam command="load" file="$(find apc16delft_description)/config/joint_names_sia20f.yaml" />
+	<rosparam command="load" file="$(find apc16delft_description)/config/sia20f_motion_interface.yaml" />
+
+	<include file="$(find apc16delft_description)/launch/robot_description.launch">
+		<arg name="type" value="$(arg urdf)" />
+	</include>
+
+<!--
+	<include file="$(find motoman_driver)/launch/robot_state_fs100.launch">
+		<arg name="robot_ip"   value="192.168.0.50" />
+	</include>
+-->
+	<include file="$(find apc16delft_description)/launch/robot_interface_streaming.launch"/>
+	<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >
+		<remap from="joint_states" to="/sia20f/sia20f_r1_controller/joint_states" />
+	</node>
+	<node pkg="robot_state_publisher" type="robot_state_publisher" name="rail_state_publisher" >
+		<remap from="joint_states" to="/sia20f/sia20f_b1_controller/joint_states" />
+	</node>
+
+	<!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+	<include file="$(find apc16delft_moveit_config)/launch/planning_context.launch">
+		<arg name="load_robot_description" value="false"/>
+	</include>
+	<include file="$(find apc16delft_moveit_config)/launch/move_group.launch"/>
+</launch>

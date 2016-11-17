@@ -1,0 +1,11 @@
+ObjectDetection object                    # The object to estimate the pose of.
+int32 container_index                     # The container index (-1 for tote, or bin index)
+geometry_msgs/Pose container_pose         # The estimated pose of the container.
+---
+Error error                               # The error, if any.
+float64 estimation_error                  # A measure of error for the pose estimation. Lower is better. Positive infinity means the pose estimation failed.
+float64 model_match                       # Percentage of points from the model that matched with a point in the scene.
+geometry_msgs/PoseStamped pose            # The estimated pose of the object.
+sensor_msgs/PointCloud2 transformed_model # Model transformed using the detected object pose.
+
+#int32 E_SRV_BASE = 10300

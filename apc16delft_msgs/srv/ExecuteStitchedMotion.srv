@@ -1,0 +1,7 @@
+trajectory_msgs/JointTrajectory[] trajectories # The trajectories to execute.
+float32 velocity_scaling					   # User set velocity scaling, if 0.0, use default.
+int32[] delay_indices						   # Indices to implement a delay.
+float64[] delay_times						   # Corresponding delays.
+---
+Error error
+#int32 E_SRV_BASE = 11600

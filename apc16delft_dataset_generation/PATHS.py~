@@ -1,0 +1,28 @@
+# This is a configuration file that sets the paths
+# this file must be linked to symbolically in each directory that uses this settings
+# this is done by executing: 'ln -s ../PATHS.py PATHS.py' in the corresponding directory
+# the symbolic link must then be imported in each script that uses these settings to get acces 
+# to the variables that are set in the PATHS.py file
+# 'import PATHS varname1, varname2, varname3'
+
+# This file is located at:
+# EWI/xander/gitFolder/
+
+# The file that use these settings are located at:
+# EWI/xander/gitFolder/subfolder
+
+# The folders of interest are located in:
+# EWI/py-faster-rcnn/data.....
+
+# Directory with the originally recorded *.ppm images
+ppmDir = '../EWIserver/py-faster-rcnn/data/DRapc2016/APC2016/PPMImages/'
+
+# Directory that contains the preprocessed images, the *ppm image are converted to JPEG
+jpegDir = '../EWIserver/py-faster-rcnn/data/DRapc2016/APC2016/JPEGImages/'
+
+# Directory with the annotations that result from the preprocessing. The annotations contain information about the data present in the images (widht, height, bounding box, ..)
+xmlDir = '../EWIserver/py-faster-rcnn/data/DRapc2016/APC2016/Annotations/'
+
+# Definition of the classes that are present in the dataset
+# each class corresponds to a class index. Only add classes with a new, NEVER CHANGE the ORDER
+class2Index = dict(headphones=1, pingpong=2, remotecontrol=3)

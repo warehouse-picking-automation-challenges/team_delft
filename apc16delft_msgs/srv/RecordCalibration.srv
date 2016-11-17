@@ -1,0 +1,2 @@
+geometry_msgs/Pose pose # Current pose of the end effector of the robot. Its frame must be identical to that given in InitializeCalibration.
+---

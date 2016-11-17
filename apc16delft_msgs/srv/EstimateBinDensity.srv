@@ -1,0 +1,15 @@
+sensor_msgs/PointCloud2 bin              # The point cloud of the bin in robot_tool0 frame
+geometry_msgs/Pose bin_pose              # The pose of the bin in robot_tool0 frame
+geometry_msgs/Pose lens_pose             # The pose of the lens of the left camera w.r.t. point cloud, pose is used to calculate if placement candidates are observable by the camera
+int32 bin_index                          # The index of the bin, required because bin dimensions may vary
+float32 radius                           # Radius of sphere to calculate number of points within for calculating density
+float32 step_size                        # Distance in meters between different candidates to calculate point density for, defining the spacing of the 2D grid
+---
+Error error                              # Error code, in case of failure
+geometry_msgs/PointStamped[] candidates  # The evaluated positions to calculate density
+float64[] scores                         # Scores, based on density and location in the bin
+
+#int32 E_SRV_BASE = 11500
+int32 E_CLOUD_EMPTY       = 11501        # Input cloud is empty
+int32 E_SANITY_DENSITIES  = 11502        # Sanity check failed, probably incorrectly set params
+int32 E_SANITY_CANDIDATES = 11503        # Sanity check failed, probably incorrectly set params

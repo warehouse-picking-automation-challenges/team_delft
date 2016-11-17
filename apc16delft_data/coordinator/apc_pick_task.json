@@ -1,0 +1,14 @@
+{
+    "bin_contents": {
+        "bin_B": [
+            "fitness_gear_3lb_dumbbell"
+        ]
+    },
+    "tote_contents": [],
+    "work_order": [
+        {
+            "bin": "bin_B",
+            "item": "fitness_gear_3lb_dumbbell"
+        }
+    ]
+}

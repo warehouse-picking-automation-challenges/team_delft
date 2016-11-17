@@ -1,0 +1,105 @@
+# bin poses (w.r.t. shelf pose) and dimensions.
+
+# top row
+#bin_A
+"0":
+    model_path: "package://apc16delft_data/models/bins/bin_0_9.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_0_9.pcd"
+    pose:
+        position:    {x: -0.40159, y: -0.438, z: 1.5537}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.268, y: 0.43, z: 0.226}
+#bin_B
+"1":
+    model_path: "package://apc16delft_data/models/bins/bin_1_10.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_1_10.pcd"
+    pose:
+        position:    {x: -0.14947, y: -0.438, z: 1.5537}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.3, y: 0.43, z: 0.226}
+#bin_C
+"2":
+    model_path: "package://apc16delft_data/models/bins/bin_2_11.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_2_11.pcd"
+    pose:
+        position:    {x: 0.15664, y: -0.438, z: 1.5537}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.268, y: 0.43, z: 0.226}
+
+# upper middle row
+#bin_D
+"3":
+    model_path: "package://apc16delft_data/models/bins/bin_3_6.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_3_6.pcd"
+    pose:
+        position:    {x: -0.40159, y: -0.438, z: 1.32507}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.268, y: 0.43, z: 0.19}
+#bin_E
+"4":
+    model_path: "package://apc16delft_data/models/bins/bin_4_7.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_4_7.pcd"
+    pose:
+        position:    {x: -0.14947, y: -0.438, z: 1.32507}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.3, y: 0.43, z: 0.19}
+#bin_F
+"5":
+    model_path: "package://apc16delft_data/models/bins/bin_5_8.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_5_8.pcd"
+    pose:
+        position:    {x: 0.15664, y: -0.438, z: 1.32507}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.268, y: 0.43, z: 0.19}
+
+# lower middle row
+#bin_G
+"6":
+    model_path: "package://apc16delft_data/models/bins/bin_3_6.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_3_6.pcd"
+    pose:
+        position:    {x: -0.40159, y: -0.438, z: 1.09642}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.268, y: 0.43, z: 0.19}
+#bin_H
+"7":
+    model_path: "package://apc16delft_data/models/bins/bin_4_7.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_4_7.pcd"
+    pose:
+        position:    {x: -0.14947, y: -0.438, z: 1.09642}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.3, y: 0.43, z: 0.19}
+#bin_I
+"8":
+    model_path: "package://apc16delft_data/models/bins/bin_5_8.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_5_8.pcd"
+    pose:
+        position:    {x: 0.15664, y: -0.438, z: 1.09642}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.268, y: 0.43, z: 0.19}
+
+# bottom row
+#bin_J
+"9":
+    model_path: "package://apc16delft_data/models/bins/bin_0_9.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_0_9.pcd"
+    pose:
+        position:    {x: -0.40159, y: -0.438, z: 0.82974}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.268, y: 0.43, z: 0.226}
+#bin_K
+"10":
+    model_path: "package://apc16delft_data/models/bins/bin_1_10.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_1_10.pcd"
+    pose:
+        position:    {x: -0.14947, y: -0.438, z: 0.82974}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.3, y: 0.43, z: 0.226}
+#bin_L
+"11":
+    model_path: "package://apc16delft_data/models/bins/bin_2_11.pcd"
+    collision_model_path: "package://apc16delft_data/models/bins/bin_2_11.pcd"
+    pose:
+        position:    {x: 0.15664, y: -0.438, z: 0.82974}
+        orientation: {x: 0, y: 0, z: 0, w: 1}
+    dimensions:      {x: 0.268, y: 0.43, z: 0.226}

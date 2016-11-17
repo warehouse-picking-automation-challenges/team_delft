@@ -1,0 +1,5 @@
+apc16delft_msgs/CropBox2D[] boxes              # Bounding box and inside/outside cropping
+sensor_msgs/PointCloud2 point_cloud            # The point cloud to crop
+---
+sensor_msgs/PointCloud2[] cropped_point_clouds # The cropped point clouds
+geometry_msgs/Point[] centroids                # Centroids of the cropped point cloud

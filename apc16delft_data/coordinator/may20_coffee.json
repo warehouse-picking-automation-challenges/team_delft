@@ -1,0 +1,44 @@
+{
+    "bin_contents": {
+        "bin_A": [
+            
+        ],
+        "bin_B": [
+        ],
+        "bin_C": [
+        ],
+        "bin_D": [
+        ],
+        "bin_E": [
+            "folgers_classic_roast_coffee"
+        ],
+        "bin_F": [
+        	
+        ],
+        "bin_G": [
+
+        ],
+        "bin_H": [
+
+        ],
+        "bin_I": [
+
+        ],
+        "bin_J": [
+        ],
+        "bin_K": [
+
+        ],
+        "bin_L": [
+
+        ]
+    },
+    "tote_contents": [],
+    "work_order": [
+        {
+            "bin": "bin_E",
+            "item": "folgers_classic_roast_coffee"
+        }
+    ]
+}
+

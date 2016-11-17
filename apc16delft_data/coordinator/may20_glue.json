@@ -1,0 +1,44 @@
+{
+    "bin_contents": {
+        "bin_A": [
+            
+        ],
+        "bin_B": [
+        ],
+        "bin_C": [
+        ],
+        "bin_D": [
+        ],
+        "bin_E": [
+        ],
+        "bin_F": [
+        	
+        ],
+        "bin_G": [
+
+        ],
+        "bin_H": [
+
+        ],
+        "bin_I": [
+
+        ],
+        "bin_J": [
+            "elmers_washable_no_run_school_glue"
+        ],
+        "bin_K": [
+
+        ],
+        "bin_L": [
+
+        ]
+    },
+    "tote_contents": [],
+    "work_order": [
+        {
+            "bin": "bin_J",
+            "item": "elmers_washable_no_run_school_glue"
+        }
+    ]
+}
+

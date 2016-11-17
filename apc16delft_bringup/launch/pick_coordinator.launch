@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="dump_data" default="true"/>
+	<node name="coordinator" type="pick_coordinator.py" pkg="apc16delft_coordinator" output="screen">
+		<param name="task_file" value="$(find apc16delft_data)/coordinator/apc_pick_task.json" />
+		<param name="dump_data" value="$(arg dump_data)" />
+	</node>
+</launch>

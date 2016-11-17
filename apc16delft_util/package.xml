@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+	<name>apc16delft_util</name>
+	<version>0.0.0</version>
+	<description>The apc16delft_util package</description>
+	<license>Apache v2.0</license>
+
+	<maintainer email="j.e.t.tan@tudelft.nl">Jethro Tan</maintainer>
+
+	<author email="j.e.t.tan@tudelft.nl">Jethro Tan</author>
+	<author email="maarten@de-vri.es">Maarten de Vries</author>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<depend>roscpp</depend>
+	<depend>dr_eigen</depend>
+	<depend>dr_param</depend>
+	<depend>tf</depend>
+	<depend>tf2</depend>
+	<depend>apc16delft_msgs</depend>
+	<depend>roslib</depend>
+	<depend>sensor_msgs</depend>
+	<depend>pcl_ros</depend>
+	<depend>pcl_conversions</depend>
+	<depend>std_srvs</depend>
+</package>

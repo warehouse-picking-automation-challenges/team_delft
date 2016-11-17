@@ -1,0 +1,27 @@
+{"bin_contents":{
+"bin_A":["dove_beauty_bar", "kleenex_paper_towels", "laugh_out_loud_joke_book"],
+"bin_B":["easter_turtle_sippy_cup", "scotch_bubble_mailer", "womens_knit_gloves", "platinum_pets_dog_bowl"],
+"bin_C":["elmers_washable_no_run_school_glue", "clorox_utility_brush", "cloud_b_plush_bear"],
+"bin_D":["expo_dry_erase_board_eraser", "fitness_gear_3lb_dumbbell", "jane_eyre_dvd"],
+"bin_E":["folgers_classic_roast_coffee", "kyjen_squeakin_eggs_plush_puppies", "rolodex_jumbo_pencil_cup"],
+"bin_F":["kleenex_tissue_box"],
+"bin_G":["command_hooks", "scotch_duct_tape"],
+"bin_H":["rawlings_baseball", "cherokee_easy_tee_shirt", "barkely_hide_bones"],
+"bin_I":["soft_white_lightbulb", "staples_index_cards", "oral_b_toothbrush_green"],
+"bin_J":["up_glucose_bottle"],
+"bin_K":["crayola_24_ct", "fiskars_scissors_red", "dr_browns_bottle_brush"],
+"bin_L":["dasani_water_bottle", "ticonderoga_12_pencils", "safety_first_outlet_plugs"]
+},"tote_contents":[],"work_order":[
+{"bin":"bin_A","item":"dove_beauty_bar"},
+{"bin":"bin_B","item":"easter_turtle_sippy_cup"},
+{"bin":"bin_C","item":"elmers_washable_no_run_school_glue"},
+{"bin":"bin_D","item":"expo_dry_erase_board_eraser"},
+{"bin":"bin_E","item":"folgers_classic_roast_coffee"},
+{"bin":"bin_F","item":"kleenex_tissue_box"},
+{"bin":"bin_G","item":"command_hooks",
+{"bin":"bin_H","item":"rawlings_baseball"},
+{"bin":"bin_I","item":"soft_white_lightbulb"},
+{"bin":"bin_J","item":"up_glucose_bottle"},
+{"bin":"bin_K","item":"crayola_24_ct"},
+{"bin":"bin_L","item":"dasani_water_bottle"}
+]}

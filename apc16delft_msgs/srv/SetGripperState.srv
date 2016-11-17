@@ -1,0 +1,6 @@
+GripperState state  # The desired gripper state.
+---
+int32 error         # An error number or 0.
+string message      # A human readable message describing the error or success.
+#TODO: Use Error message type for output
+#int32 E_SRV_BASE = 11100

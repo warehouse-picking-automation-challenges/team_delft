@@ -1,0 +1,6 @@
+bool dump                             # If true, stores the image and point cloud.
+bool publish                          # If true, publishes the point cloud over a ros topic
+---
+sensor_msgs/Image color               # A synchronized color image.
+sensor_msgs/PointCloud2 point_cloud   # A synchronized point cloud.
+octomap_msgs/Octomap octomap          # A synchronized octomap.

@@ -1,0 +1,31 @@
+kyjen_squeakin_eggs_plush_puppies:
+    # PCL model.
+    model_path: "package://apc16delft_data/models/kyjen_squeakin_eggs_plush_puppies.pcd"
+
+    # prune distance
+    reachability_prune_distance: 0.005
+
+    # pre-grasp offset
+    pre_grasp_offset: 0.03
+
+    # Center of Mass.
+    CoM:
+        position: {x: 0.0, y: 0.0, z: 0.0}
+
+    # List of sample spaces in which we can generate grasps.
+    sample_space:
+        - shape: "sphere"
+          vacuum: True
+          generate: True
+          point_distance: 0.06
+          intersection_threshold: 0.012
+          radius: 0.02
+          origin:
+              position: {x: 0.0, y: 0.0, z: 0.0}
+              orientation: {r: 0.0, p: 0.0, y: 0.0}
+
+    difficulty: 0
+    bonus: 1
+    fragility:  'no'
+    weight:     'low'
+    size:       'small'

@@ -1,0 +1,11 @@
+<launch>
+	<arg name="moveit_octomap_sensor_params_file" default="$(find apc16delft_moveit_config)/config/sensors_ensenso.yaml" />
+	
+	<!-- Params for the octomap monitor -->
+	<param name="octomap_frame" type="string" value="world" />
+	<param name="octomap_resolution" type="double" value="0.005" />
+	<param name="max_range" type="double" value="2" />
+	
+	<rosparam command="load" file="$(arg moveit_octomap_sensor_params_file)" />
+
+</launch>

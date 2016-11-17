@@ -1,0 +1,30 @@
+cool_shot_glue_sticks:
+    # PCL model.
+    model_path: "package://apc16delft_data/models/cool_shot_glue_sticks.pcd"
+
+    # prune distance
+    reachability_prune_distance: 0.01
+
+    # pre-grasp offset
+    pre_grasp_offset: 0.05
+
+    # Center of Mass.
+    CoM:
+        position: {x: 0.0, y: 0.0, z: 0.0}
+
+    # List of sample spaces in which we can generate grasps.
+    sample_space:
+        - shape: "deformable"
+          # Additional hand crafted grasp candidates for suction in object frame.
+          # rpy follows z-y-x convention in degrees.
+          extra_candidates:
+              - score: 1.0
+                pose:
+                    position:    {x: 0.0, y: 0.0, z: 0.0}
+                    orientation: {r: 0.0, p: 0.0, y: 0.0}
+
+    difficulty: 0
+    bonus: 0
+    fragility:  'no'
+    weight:     'low'
+    size:       'small'

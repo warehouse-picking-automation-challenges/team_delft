@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<package format="2">
+	<name>apc16delft_grasp_synthesizer</name>
+	<version>0.0.0</version>
+	<description>The apc16delft grasp synthesizer.</description>
+	<license>TODO</license>
+	<maintainer email="w.k.h.ko@delftrobotics.com">apc</maintainer>
+
+	<buildtool_depend>catkin </buildtool_depend>
+	<depend>roscpp           </depend>
+	<depend>apc16delft_msgs  </depend>
+	<depend>apc16delft_util  </depend>
+	<depend>dr_eigen         </depend>
+	<depend>dr_param         </depend>
+	<depend>pcl_conversions  </depend>
+	<depend>pcl_ros          </depend>
+	<depend>cmake_modules    </depend>
+</package>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+	<name>apc16delft_calibration</name>
+	<version>0.0.0</version>
+	<description>apc16delft_calibration</description>
+	<license>Apache v2.0</license>
+
+	<maintainer email="maarten@de-vri.es">Maarten de Vries</maintainer>
+	<author email="maarten@de-vri.es">Maarten de Vries</author>
+	<author email="j.a.vanegmond@tudelft.nl">Jeff van Egmond</author>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<depend>dr_eigen</depend>
+	<depend>dr_param</depend>
+	<depend>roscpp</depend>
+	<depend>geometry_msgs</depend>
+	<depend>tf</depend>
+	<depend>moveit_ros_planning_interface</depend>
+	<depend>apc16delft_msgs</depend>
+</package>

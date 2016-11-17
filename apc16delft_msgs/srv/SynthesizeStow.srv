@@ -1,0 +1,14 @@
+uint8 bin_index                                 # index of the current bin
+geometry_msgs/PointStamped[] density_candidates # bin density grid output
+geometry_msgs/PoseStamped bin_pose              # The estimated pose of the bin.
+float64 bin_density_scores                      # bin density score output
+ObjectDetection[] detected_objects              # The detected objects
+Object[] expected_objects                       # The expected objects
+Object grasped_object                           # The currently grasped object
+geometry_msgs/PoseStamped object_pose           # The estimated pose of the grasped object.
+GraspCandidate grasp_candidate                  # The grasp candidate that was used
+---
+Error error                     # Error if one occured.
+PlacementCandidate[] candidates # The found grasp candidates.
+                                # TODO: Use Error message type for output
+                                # int32 E_SRV_BASE = 11700

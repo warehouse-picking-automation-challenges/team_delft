@@ -1,0 +1,8 @@
+RotatedBox[] volumes             # The available volumes for placing objects.
+geometry_msgs/Pose container     # The container pose
+---
+int32 error                      # An error code or 0 for success.
+string message                   # A human readable error or success message.
+PlacementCandidate[] candidates  # The found grasp candidates.
+#TODO: Use Error message type for output
+#int32 E_SRV_BASE = 11300

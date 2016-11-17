@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# check if argument is given (username)
+if [ -n "$1" ];
+then
+	echo $1;
+else
+	echo "No argument given";
+	echo "Usage: ./setup.apc username";
+	exit 1;
+fi
+
+echo "Create user"
+
+sudo adduser $1
+sudo adduser $1 sudo
+
+
+echo "Setting up SSH keys"
+# make directory if not already exists
+
+echo $HOME/../$1/.ssh
+sudo -u $1 mkdir -p /home/$1/.ssh
+# create key
+sudo -u $1 ssh-keygen -t rsa -N "" -f /home/$1/.ssh/id_rsa
+
+
+# copy key to current user with ssh permissions
+echo "Home: " $HOME
+echo "User: " $USER
+
+mkdir -p $HOME/keys
+sudo cp -r /home/$1/.ssh/* $HOME/keys
+
+## change permissions
+sudo chmod -R 755 $HOME/keys
+
+## copy to machine
+ssh-copy-id -i $HOME/keys/id_rsa.pub xgerrmann@git.delftrobotics.com -p 322
+
+echo "Setting pythonpath"
+sudo -u $1 echo PYTHONPATH=$PYTHONPATH:/home/$1/team_delft/apc16delft_dataset_generation >> /home/$1/.bashrc
+
+echo "Copying git repos"
+#let USR = "${USER}"
+#echo $USR
+sudo cp /home/$USER/team_delft/ /home/$1/ -r
+
+echo "Mount dataset"
+sudo -u $1 mkdir -p /home/$1/DRapc2016
+sudo -u $1 sshfs -p 322 xgerrmann@git.delftrobotics.com:/usr/local/share/datasets/DRapc2016 /home/$1/DRapc2016 -o nonempty
+
+echo "Finished !! "

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<launch>
+	<arg name="gui"  default="true" />
+	<arg name="rviz" default="true" />
+	<arg name="type" default="sia20f" />
+
+	<include file="$(find apc16delft_description)/launch/robot_description.launch">
+		<arg name="type" value="$(arg type)" />
+	</include>
+
+	<include if="$(arg rviz)" file="$(find apc16delft_description)/launch/rviz.launch" />
+
+	<node name="joint_state_publisher" type="joint_state_publisher" pkg="joint_state_publisher">
+		<param name="use_gui" value="$(arg gui)" />
+	</node>
+	<node name="robot_state_publisher" type="robot_state_publisher" pkg="robot_state_publisher" />
+</launch>

@@ -1,0 +1,8 @@
+int8 bin_index                             # The index of the bin to stow in.
+uint8 object_type                          # The object to stow.
+geometry_msgs/PoseStamped bin_pose         # The pose of the target bin.
+GraspCandidate grasp_candidate			   # The grasp candidate that was used.
+---
+Error error
+int32 release_waypoint                     # The waypoint index where the item should be released.
+trajectory_msgs/JointTrajectory trajectory # The full stow trajectory.

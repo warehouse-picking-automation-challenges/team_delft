@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="debug" default="false" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+  <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
+
+  <!-- Loading the masterposes onto the parameter server -->
+  <rosparam command="load" file="$(find apc16delft_data)/masterposes/generation/cameraposes_jointspace.yaml" />
+
+  <!-- Next line commented as the master_poses.yaml replaces all these poses -->
+  <!-- rosparam command="load" file="$(find apc16delft_data)/masterposes/generation/gripperposes_jointspace.yaml" /-->
+  <rosparam command="load" file="$(find apc16delft_data)/masterposes/master_poses.yaml" />
+
+  <node name="apc16delft_trajectory_generation"
+  		launch-prefix="$(arg launch_prefix)"
+        pkg="apc16delft_motion"
+        type="trajectory_generator"
+		output="screen">
+		<rosparam param="/attach_box_size">0.25</rosparam>
+	</node>
+
+</launch>

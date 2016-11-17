@@ -1,0 +1,6 @@
+bool camera_moving               # If true, camera is in hand. If false, camera is fixed.
+string moving_frame              # Frame to calibrate the camera to when camera_moving is true (gripper frame).
+string static_frame              # Frame to calibrate the camera to when camera_moving is false (robot origin or world frame).
+geometry_msgs/Pose camera_guess  # Initial guess of the camera pose relative to the gripper (camera in hand) or the robot base/world (camera fixed).
+geometry_msgs/Pose pattern_guess # Initial guess of the pattern relative to the grippper (camera in hand) or the robot base/world (camera fixed).
+---

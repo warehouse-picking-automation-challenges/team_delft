@@ -1,0 +1,1 @@
+The scripts in this folder only work locally, since it makes use of a local video device.

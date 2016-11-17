@@ -1,0 +1,76 @@
+{
+    "bin_contents": {
+        "bin_A": [
+            "jane_eyre_dvd",
+            "kleenex_paper_towels"
+        ],
+        "bin_B": [
+            "dasani_water_bottle",
+            "soft_white_lightbulb",
+            "creativity_chenille_stems"
+        ],
+        "bin_C": [
+            "fitness_gear_3lb_dumbbell"
+        ],
+        "bin_D": [
+            "command_hooks",
+            "scotch_bubble_mailer",
+            "scotch_bubble_mailer"
+        ],
+        "bin_E": [
+            "safety_first_outlet_plugs",
+            "rawlings_baseball",
+            "up_glucose_bottle",
+            "dasani_water_bottle",
+            "creativity_chenille_stems",
+            "cool_shot_glue_sticks",
+            "crayola_24_ct"
+        ],
+        "bin_F": [
+            "dove_beauty_bar",
+            "scotch_duct_tape",
+            "womens_knit_gloves",
+            "elmers_washable_no_run_school_glue",
+            "oral_b_toothbrush_green"
+        ],
+        "bin_G": [
+            "hanes_tube_socks",
+            "platinum_pets_dog_bowl",
+            "laugh_out_loud_joke_book",
+            "clorox_utility_brush",
+            "oral_b_toothbrush_red"
+        ],
+        "bin_H": [
+            "staples_index_cards",
+            "folgers_classic_roast_coffee"
+        ],
+        "bin_I": [
+            "cloud_b_plush_bear",
+            "easter_turtle_sippy_cup"
+        ],
+        "bin_J": [
+            "scotch_duct_tape",
+            "staples_index_cards"
+        ],
+        "bin_K": [
+            "expo_dry_erase_board_eraser"
+        ],
+        "bin_L": [
+            "cherokee_easy_tee_shirt"
+        ]
+    },
+    "tote_contents": [
+        "kleenex_tissue_box",
+        "elmers_washable_no_run_school_glue",
+        "i_am_a_bunny_book",
+        "ticonderoga_12_pencils",
+        "kyjen_squeakin_eggs_plush_puppies",
+        "dr_browns_bottle_brush",
+        "fiskars_scissors_red",
+        "expo_dry_erase_board_eraser",
+        "woods_extension_cord",
+        "peva_shower_curtain_liner",
+        "rolodex_jumbo_pencil_cup",
+        "barkely_hide_bones"
+    ]
+}

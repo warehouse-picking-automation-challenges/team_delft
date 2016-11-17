@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="fake_bin_pose_estimator" default="true" />
+
+	<group if="$(arg fake_bin_pose_estimator)">
+		<!-- Start the fake pose estimation node. -->
+		<node name="bin_pose_estimation" pkg="apc16delft_fake_components" type="apc16delft_fake_components_bin_pose_estimation" output="screen"/>
+	</group>
+
+	<group unless="$(arg fake_bin_pose_estimator)">
+		<node name="bin_pose_estimation" pkg="apc16delft_pose_estimation" type="bin_pose_estimation" output="screen">
+			<param name="icp_max_iterations"                  value="50"  />
+			<param name="sanity_translation_threshold"        value="0.1" />
+			<param name="sanity_orientation_threshold_degree" value="10"  />
+		</node>
+	</group>
+</launch>
+

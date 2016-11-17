@@ -1,0 +1,146 @@
+<?xml version="1.0" ?>
+<robot name="apc16delft" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:property name="pi" value="3.1415926535897"/>
+
+<xacro:macro name="apc16delft_gripper" params="prefix">
+	<link name="${prefix}body">
+		<visual>
+			<geometry><mesh filename="package://apc16delft_description/meshes/gripper/body_short_visual.stl" /></geometry>
+			<material name="dr_white"><color rgba="0.9 0.9 0.9 1" /></material>
+			<origin rpy="0 ${-0.5 * pi} 0" />
+		</visual>
+		<!--
+		<visual>
+			<geometry><mesh filename="package://apc16delft_description/meshes/gripper/camera.stl" /></geometry>
+			<material name="dr_black"><color rgba="0.2 0.2 0.2 1" /></material>
+		</visual>
+		-->
+		<collision>
+			<!--
+			<geometry>
+				<box size="0.08 0.0475 0.42" />
+			</geometry>
+			<origin xyz="-0.01 0 0.195" />
+			-->
+			<geometry><mesh filename="package://apc16delft_description/meshes/gripper/body_short_collision.stl" /></geometry>
+			<origin rpy="0 ${-0.5 * pi} 0" />
+		</collision>
+		<!--
+		<collision>
+			<geometry>
+				<box size="0.05 0.03 0.18" />
+			</geometry>
+			<origin xyz="0 -0.035 0.27" />
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.0275" />
+			</geometry>
+			<origin xyz="0 -0.039 0.423" />
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.04" />
+			</geometry>
+			<origin xyz="0 0.026 0.423" />
+		</collision>
+		-->
+
+		<visual>
+			<geometry><cylinder length="0.028" radius="0.05"/></geometry>
+			<material name="dr_gold"><color rgba="0.85 0.65 0.125 1" /></material>
+			<origin xyz="0 0 -0.014" />
+		</visual>
+		<collision>
+			<geometry><cylinder length="0.028" radius="0.05"/></geometry>
+			<origin xyz="0 0 -0.014" />
+		</collision>
+	</link>
+
+	<link name="${prefix}vacuum">
+		<visual>
+			<geometry><mesh filename="package://apc16delft_description/meshes/gripper/head_visual.stl" /></geometry>
+			<material name="dr_grey"><color rgba="0.6 0.6 0.6 1" /></material>
+			<origin xyz="0 0 0" rpy="0 ${-0.5 * pi} 0" />
+		</visual>
+		<collision>
+			<geometry><mesh filename="package://apc16delft_description/meshes/gripper/head_collision.stl" /></geometry>
+			<origin xyz="0 0 0" rpy="0 ${-0.5 * pi} 0" />
+		</collision>
+	</link>
+	<!--
+	<link name="${prefix}finger_slider">
+		<visual>
+			<geometry><mesh filename="package://apc16delft_description/meshes/gripper/finger-slider.stl" /></geometry>
+			<material name="dr_metal"><color rgba="0.7 0.7 0.8 1" /></material>
+		</visual>
+	</link>
+
+	<link name="${prefix}finger">
+		<visual>
+			<geometry><mesh filename="package://apc16delft_description/meshes/gripper/finger.stl" /></geometry>
+			<material name="dr_white"><color rgba="0.9 0.9 0.9 1" /></material>
+		</visual>
+	</link>
+-->
+	<link name="${prefix}tool0" />
+	<link name="${prefix}tool1" />
+	<link name="${prefix}tool2" />
+	<link name="${prefix}camera_color" />
+	<link name="${prefix}camera_depth" />
+
+	<joint name="${prefix}camera_color" type="fixed">
+		<parent link="${prefix}body" />
+		<child link="${prefix}camera_color" />
+		<origin xyz="0 0.172 0.005" rpy="${20*pi/180} 0 ${pi}"/>
+	</joint>
+
+	<joint name="${prefix}camera_depth" type="fixed">
+		<parent link="${prefix}body" />
+		<child link="${prefix}camera_depth" />
+		<origin xyz="0.05 0.132 0.011" rpy="${20*pi/180} 0 ${pi}"/>
+	</joint>
+
+	<joint name="${prefix}vacuum" type="revolute">
+		<parent link="${prefix}body" />
+		<child link="${prefix}vacuum" />
+		<axis xyz="-1 0 0" />
+		<limit lower="0" upper="1.5707" effort="1" velocity="1" />
+		<origin xyz="0 0.0085 0.423" />
+	</joint>
+
+	<!--
+	<joint name="${prefix}finger_slider" type="prismatic">
+		<parent link="${prefix}body" />
+		<child link="${prefix}finger_slider" />
+		<axis xyz="0 0 1" />
+		<limit lower="0" upper="0.053" effort="1" velocity="1" />
+	</joint>
+	<joint name="${prefix}finger" type="revolute">
+		<parent link="${prefix}finger_slider" />
+		<child link="${prefix}finger" />
+		<limit lower="0" upper="${53 * 3.14159265 / 180}" effort="1" velocity="1" />
+		<origin xyz="0 -0.0238 0.196" />
+	</joint>
+-->
+	<joint name="${prefix}tool0" type="fixed">
+		<parent link="${prefix}body" />
+		<child link="${prefix}tool0" />
+		<origin xyz="0 -0.025 0.44" rpy="-1.57079633 0 3.14159265" />
+	</joint>
+
+	<joint name="${prefix}tool1" type="fixed">
+		<parent link="${prefix}body" />
+		<child link="${prefix}tool1" />
+		<origin xyz="0 0.022 0.455" rpy="0 0 3.14159265" />
+	</joint>
+
+	<joint name="${prefix}tool2" type="fixed">
+		<parent link="${prefix}body" />
+		<child link="${prefix}tool2" />
+		<origin xyz="0 0.022 0.415" rpy="${-pi/2} 0 0" />
+	</joint>
+</xacro:macro>
+
+</robot>

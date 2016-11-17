@@ -1,0 +1,7 @@
+use manipulator
+go home
+go pose_f0
+go left 0.15
+go right 0.15
+go drop
+go home

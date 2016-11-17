@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package format="2">
+	<name>apc16delft_data</name>
+	<version>0.0.0</version>
+	<description>The apc16delft_data package</description>
+	<license>TODO</license>
+
+	<maintainer email="w.k.h.ko@delftrobotics.com">wko</maintainer>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<depend>rospy</depend>
+	<depend>std_srvs</depend>
+</package>

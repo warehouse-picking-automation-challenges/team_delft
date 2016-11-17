@@ -1,0 +1,6 @@
+MasterPoseDescriptor start  # The starting master pose.
+MasterPoseDescriptor target # The target master pose.
+---
+Error error
+
+#int32 E_SRV_BASE = 10500

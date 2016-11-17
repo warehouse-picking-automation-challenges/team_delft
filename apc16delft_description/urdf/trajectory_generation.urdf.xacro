@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<robot name="apc16delft" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find apc16delft_description)/urdf/include/calibration.urdf.xacro" />
+<xacro:include filename="$(find apc16delft_description)/urdf/include/trajectory_system.urdf.xacro" />
+<xacro:include filename="$(find apc16delft_description)/urdf/include/gripper.urdf.xacro" />
+
+<xacro:apc2016delft_system />
+
+</robot>

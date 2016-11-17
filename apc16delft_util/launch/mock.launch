@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="mock_pattern_detection"    default="true"/>
+  <arg name="mock_calibration"          default="true"/>
+  <arg name="mock_motion_planner"       default="false"/>
+  <arg name="mock_visualizer"           default="false"/>
+  <arg name="mock_pose_accumulator"     default="false"/>
+
+  <node pkg="rtnc_util" type="mock_node" name="mock_node" output="screen">
+    <param name="mock_pattern_detection"       type="bool"   value="$(arg mock_pattern_detection)"/>
+    <param name="mock_calibration"             type="bool"   value="$(arg mock_calibration)"/>
+    <param name="mock_motion_planner"          type="bool"   value="$(arg mock_motion_planner)"/>
+    <param name="mock_visualizer"              type="bool"   value="$(arg mock_visualizer)"/>
+    <param name="mock_pose_accumulator"        type="bool"   value="$(arg mock_pose_accumulator)"/>
+  </node>
+</launch>

@@ -1,0 +1,6 @@
+uint8 bin_index                              # Index of the current bin.
+geometry_msgs/PoseStamped relative_transform # Relative transform of the desired camera adjustment pose
+---
+Error error                                        # Error number or 0.
+trajectory_msgs/JointTrajectory camera_trajectory  # Trajectory for the camera adjustment motion.
+trajectory_msgs/JointTrajectory reverse_trajectory # Reverse Trajectory for the camera adjustment motion.

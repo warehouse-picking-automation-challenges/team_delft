@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>
+	<arg name="type" default="sia20f" />
+	<param name="robot_description"          command="$(find xacro)/xacro '$(find apc16delft_description)/urdf/$(arg type).urdf.xacro'" />
+	<param name="robot_description_semantic" command="$(find xacro)/xacro '$(find apc16delft_description)/srdf/$(arg type).srdf.xacro'" />
+</launch>

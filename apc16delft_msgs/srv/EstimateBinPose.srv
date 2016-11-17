@@ -1,0 +1,12 @@
+sensor_msgs/PointCloud2 scene          # The recorded bin scene.
+geometry_msgs/Pose shelf_initial_guess # Initial guess for the pose of shelf in scene frame.
+int8 bin_index                         # Index of the bin we are estimating.
+---
+Error error                            # Reports any errors if encountered.
+float64 estimation_error               # A measure of error for the pose estimation. Lower is better. Positive infinity means the pose estimation failed.
+geometry_msgs/PoseStamped pose         # The estimated pose of the bin.
+
+#int32 E_SRV_BASE = 10200
+int32 E_SCENE_EMPTY        = 10211
+int32 E_SANITY_TRANSLATION = 10212
+int32 E_SANITY_ORIENTATION = 10213

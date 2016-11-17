@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <name>apc16delft_bringup</name>
+  <version>0.0.0</version>
+  <description>The apc16delft_bringup package</description>
+
+  <maintainer email="J.E.T.Tan@tudelft.nl">Jethro Tan</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>apc16delft_msgs</run_depend>
+</package>

@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="fake_vision"                 default="false" />
+	<!--
+	<arg name="fake_camera"                 default="false" />
+	-->
+	<arg name="fake_gripper"                default="false" />
+	<arg name="fake_grasp_synthesizer"      default="false" />
+	<arg name="fake_place_synthesizer"      default="true" />
+	<arg name="fake_pose_estimator"         default="false" />
+	<arg name="fake_bin_pose_estimator"     default="false" />
+	<arg name="fake_robot"                  default="true" />
+
+	<node name="camera_calibration_publisher" type="static_transform_publisher" pkg="tf" output="screen" args="0 0 0 0 0 0 gripper_camera_depth camera_optical_frame 100"/>
+
+	<group if="$(arg fake_gripper)">
+		<node name="gripper_driver" type="apc16delft_fake_components_gripper" pkg="apc16delft_fake_components" output="screen">
+			<param name="publish_rate" value="100" />
+		</node>
+		<node pkg="robot_state_publisher" type="robot_state_publisher" name="gripper_state_publisher" >
+			<remap from="joint_states" to="/gripper_driver/joint_states" />
+		</node>
+	</group>
+	<group unless="$(arg fake_gripper)">
+		<node name="gripper_driver" type="gripper_driver" pkg="apc16delft_gripper" output="screen">
+			<param name="publish_rate" value="100" />
+		</node>
+		<node pkg="robot_state_publisher" type="robot_state_publisher" name="gripper_state_publisher" >
+			<remap from="joint_states" to="/gripper_driver/joint_states" />
+		</node>
+	</group>
+
+	<group if="$(arg fake_grasp_synthesizer)">
+		<node name="grasp_synthesizer" type="apc16delft_fake_components_grasp_synthesizer" pkg="apc16delft_fake_components" output="screen">
+			<rosparam param="grasp_position/x"   > 0</rosparam>
+			<rosparam param="grasp_position/y"   > -0.1</rosparam>
+			<rosparam param="grasp_position/z"   > 0.65</rosparam>
+			<rosparam param="grasp_orientation/x"> -0.57</rosparam>
+			<rosparam param="grasp_orientation/y"> 0</rosparam>
+			<rosparam param="grasp_orientation/z"> 0</rosparam>
+			<rosparam param="grasp_orientation/w"> 0.82</rosparam>
+		</node>
+
+		<node name="manipulation_planner" pkg="apc16delft_motion" type="manipulation_planner" output="screen">
+			<rosparam param="/grasping/params/knn"                          >false</rosparam>
+			<rosparam param="/grasping/params/knn_weight"                   >1.25 </rosparam>
+			<rosparam param="/grasping/params/knn_offset"                   >0.1 </rosparam>
+			<rosparam param="/grasping/params/gripper_top_bin_edge_clearing"> 0.08</rosparam>
+			<rosparam param="/grasping/params/stow_gripper_top_bin_edge_clearing"> 0.085</rosparam>
+			<rosparam param="/grasping/params/top_bin_edge_clearing"     > 0.04</rosparam>
+			<rosparam param="/grasping/params/bottom_bin_edge_clearing"  > 0.03</rosparam>
+			<rosparam param="/grasping/params/side_bin_edge_clearing"    > 0.05</rosparam>
+			<rosparam param="/grasping/params/back_bin_edge_clearing"    > 0.02</rosparam>
+			<rosparam param="/grasping/params/distance_epsilon"          > 0.005</rosparam>
+			<rosparam param="/grasping/params/length_epsilon"            > 0.03 </rosparam>
+			<rosparam param="/grasping/params/distance_tau"              > 0.05 </rosparam>
+			<rosparam param="/grasping/params/length_tau"                > 0.1  </rosparam>
+			<rosparam param="/grasping/params/distance_weight"           > 0.75 </rosparam>
+			<rosparam param="/grasping/params/length_weight"             > 0.25 </rosparam>
+			<rosparam param="/grasping/params/after_snap_weight"         > 0.25 </rosparam>
+			<rosparam param="/grasping/params/before_snape_weight"       > 0.75 </rosparam>
+			<!-- Aproach angles in degrees for angled approach -->
+			<rosparam param="/grasping/params/approach_angle"            > 15.0</rosparam>
+			<rosparam param="/grasping/params/side_approach_angle"       > 20.0</rosparam>
+			<!-- These tolerances are defined using the dot product, so think carefully before changing -->
+			<rosparam param="/grasping/params/facing_back_tolerance" >0.25 </rosparam>
+			<rosparam param="/grasping/params/facing_up_tolerance"   >0.25 </rosparam>
+			<rosparam param="visualise">true</rosparam>
+			<rosparam param="retreat_offset">0.03</rosparam>
+			<rosparam param="dumbbell_inwards_pre">0.05</rosparam>
+			<rosparam param="stow_y_offset"> 0.10</rosparam>
+			<param name="trajectory_velocity_scaling" value="0.03" unless="$(arg fake_robot)"/>
+			<param name="trajectory_velocity_scaling" value="0.5"      if="$(arg fake_robot)"/>
+		</node>
+	</group>
+
+	<!-- Simulator with RVIZ. -->
+	<group if="$(arg fake_robot)">
+		<include file="$(find apc16delft_simulation)/launch/simulator.launch" />
+		<node name="fake_robot_io" type="apc16delft_fake_components_robot_io" pkg="apc16delft_fake_components" />
+	</group>
+	<group unless="$(arg fake_robot)">
+		<include file="$(find apc16delft_description)/launch/robot.launch" />
+	</group>
+
+	<group unless="$(arg fake_grasp_synthesizer)">
+		<!-- Start the grasp_synthesizer. -->
+		<node name="grasp_synthesizer" pkg="apc16delft_grasp_synthesizer" type="grasp_synthesizer" output="screen" >
+			<rosparam param="/grasping/number_of_items"            >39   </rosparam>
+			<rosparam param="/grasping/visualise"                  >true </rosparam>
+
+			<rosparam param="/grasping/params/knn"                          >false</rosparam>
+			<rosparam param="/grasping/params/knn_weight"                   >1.25 </rosparam>
+			<rosparam param="/grasping/params/knn_offset"                   >0.02 </rosparam>
+			<rosparam param="/grasping/params/gripper_top_bin_edge_clearing"> 0.085</rosparam>
+			<rosparam param="/grasping/params/top_bin_edge_clearing"     > 0.04</rosparam>
+			<rosparam param="/grasping/params/bottom_bin_edge_clearing"  > 0.03</rosparam>
+			<rosparam param="/grasping/params/side_bin_edge_clearing"    > 0.05</rosparam>
+			<rosparam param="/grasping/params/back_bin_edge_clearing"    > 0.02</rosparam>
+			<rosparam param="/grasping/params/distance_epsilon"          > 0.005</rosparam>
+			<rosparam param="/grasping/params/length_epsilon"            > 0.03 </rosparam>
+			<rosparam param="/grasping/params/distance_tau"              > 0.05 </rosparam>
+			<rosparam param="/grasping/params/length_tau"                > 0.1  </rosparam>
+			<rosparam param="/grasping/params/distance_weight"           > 0.75 </rosparam>
+			<rosparam param="/grasping/params/length_weight"             > 0.25 </rosparam>
+			<rosparam param="/grasping/params/after_snap_weight"         > 0.25 </rosparam>
+			<rosparam param="/grasping/params/before_snape_weight"       > 0.75 </rosparam>
+			<!-- Aproach angles in degrees for angled approach -->
+			<rosparam param="/grasping/params/approach_angle"            > 15.0</rosparam>
+			<rosparam param="/grasping/params/side_approach_angle"       > 20.0</rosparam>
+			<!-- These tolerances are defined using the dot product, so think carefully before changing -->
+			<rosparam param="/grasping/params/facing_back_tolerance" >0.25 </rosparam>
+			<rosparam param="/grasping/params/facing_up_tolerance"   >0.09 </rosparam>
+		</node>
+		<node name="manipulation_planner" pkg="apc16delft_motion" type="manipulation_planner" output="screen">
+			<rosparam param="visualise">true</rosparam>
+			<rosparam param="stow_y_offset"> 0.08</rosparam>
+			<rosparam param="retreat_offset">0.03</rosparam>
+			<rosparam param="dumbbell_inwards_pre">0.05</rosparam>
+			<rosparam param="deformable_retreat_offset">0.06</rosparam>
+			<rosparam param="reachability_prune_distance">0.015</rosparam>
+			<param name="trajectory_velocity_scaling" value="0.2" unless="$(arg fake_robot)"/>
+			<param name="trajectory_velocity_scaling" value="0.5"      if="$(arg fake_robot)"/>
+		</node>
+	</group>
+
+	<!-- Start the motion executor. -->
+	<node name="motion_executor" pkg="apc16delft_motion" type="motion_executor" output="screen">
+		<param name="yaml_path" value="$(find apc16delft_data)/trajectories/" />
+		<param name="calibration_trajectory_length" value="15" />
+		<param name="trajectory_velocity_scaling" value="0.2" unless="$(arg fake_robot)"/>
+		<param name="trajectory_velocity_scaling" value="0.5"      if="$(arg fake_robot)"/>
+	</node>
+	<node name="scene_updater" pkg="apc16delft_motion" type="scene_updater" output="screen"/>
+	<node name="static_pointcloud_publisher" pkg="apc16delft_util" type="static_pointcloud_publisher" output="screen"/>
+
+	<!-- Start the placement synthesizer. -->
+	<group if="$(arg fake_place_synthesizer)">
+		<node name="placement_synthesizer" pkg="apc16delft_fake_components" type="apc16delft_fake_components_place_synthesizer" output="screen"/>
+	</group>
+	<group unless="$(arg fake_place_synthesizer)">
+		<node name="placement_synthesizer" pkg="apc16delft_place_synthesizer" type="place_synthesizer" output="screen">
+			<rosparam param="dimensions/x">0.6</rosparam>
+			<rosparam param="dimensions/y">0.4</rosparam>
+			<rosparam param="volumes/x">   4  </rosparam>
+			<rosparam param="volumes/y">   2  </rosparam>
+		</node>
+	</group>
+
+	<node name="occlusion_detection" pkg="apc16delft_vision" type="occlusion_detection" output="screen">
+		<param name="discretization_bin_size" value="0.01" />
+		<param name="publish_clouds"          value="true" />
+	</node>
+
+	<!-- Load item parameters to param server. -->
+	<include file="$(find apc16delft_data)/launch/param.launch" />
+
+	<!-- Loading the masterposes onto the parameter server -->
+	<rosparam command="load" file="$(find apc16delft_data)/masterposes/master_poses.yaml" />
+
+	<!-- Start vision nodes. -->
+	<include file="$(find apc16delft_object_detection)/launch/object_detection.launch">
+		<arg name="fake_vision" value="$(arg fake_vision)" />
+		<arg name="name"        value="bin" />
+	</include>
+
+	<include file="$(find apc16delft_object_detection)/launch/object_detection.launch">
+		<arg name="fake_vision" value="$(arg fake_vision)" />
+		<arg name="name"        value="tote" />
+	</include>
+
+	<!-- Start the point cloud crop node. -->
+	<node name="point_cloud_crop" pkg="apc16delft_vision" type="point_cloud_crop" output="screen">
+		<param name="filter_distance" value="0.02" />
+	</node>
+
+	<!-- Start pose estimation nodes. -->
+	<include file="$(find apc16delft_pose_estimation)/launch/pose_estimation.launch">
+		<arg name="fake_pose_estimator" value="$(arg fake_pose_estimator)"/>
+	</include>
+	
+	<include file="$(find apc16delft_pose_estimation)/launch/bin_pose_estimation.launch">
+		<arg name="fake_bin_pose_estimator" value="$(arg fake_bin_pose_estimator)"/>
+	</include>
+
+	<!-- Start camera nodes. -->
+	<!--
+	<include file="$(find apc16delft_camera)/launch/gripper.launch">
+		<arg name="fake_camera" value="$(arg fake_camera)"/>
+	</include>
+	<include file="$(find apc16delft_camera)/launch/tote.launch">
+		<arg name="fake_camera" value="$(arg fake_camera)"/>
+	</include>
+	-->
+</launch>
+

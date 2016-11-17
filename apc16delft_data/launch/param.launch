@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+	<rosparam command="load" file="$(find apc16delft_data)/param/dr_browns_bottle_brush.yaml"            ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/elmers_washable_no_run_school_glue.yaml" ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/expo_dry_erase_board_eraser.yaml"        ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/laugh_out_loud_joke_book.yaml"           ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/up_glucose_bottle.yaml"                  ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/folgers_classic_roast_coffee.yaml"       ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/barkely_hide_bones.yaml"                 ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/cherokee_easy_tee_shirt.yaml"            ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/clorox_utility_brush.yaml"               ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/cloud_b_plush_bear.yaml"                 ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/command_hooks.yaml"                      ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/cool_shot_glue_sticks.yaml"              ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/crayola_24_ct.yaml"                      ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/creativity_chenille_stems.yaml"          ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/dasani_water_bottle.yaml"                ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/dove_beauty_bar.yaml"                    ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/woods_extension_cord.yaml"               ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/easter_turtle_sippy_cup.yaml"            ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/fiskars_scissors_red.yaml"               ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/fitness_gear_3lb_dumbbell.yaml"          ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/hanes_tube_socks.yaml"                   ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/i_am_a_bunny_book.yaml"                  ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/jane_eyre_dvd.yaml"                      ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/kleenex_paper_towels.yaml"               ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/kleenex_tissue_box.yaml"                 ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/kyjen_squeakin_eggs_plush_puppies.yaml"  ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/oral_b_toothbrush_green.yaml"            ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/oral_b_toothbrush_red.yaml"              ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/peva_shower_curtain_liner.yaml"          ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/platinum_pets_dog_bowl.yaml"             ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/rawlings_baseball.yaml"                  ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/rolodex_jumbo_pencil_cup.yaml"           ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/safety_first_outlet_plugs.yaml"          ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/scotch_bubble_mailer.yaml"               ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/scotch_duct_tape.yaml"                   ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/soft_white_lightbulb.yaml"               ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/staples_index_cards.yaml"                ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/ticonderoga_12_pencils.yaml"             ns ="item/" />
+	<rosparam command="load" file="$(find apc16delft_data)/param/womens_knit_gloves.yaml"                 ns ="item/" />
+
+	<rosparam command="load" file="$(find apc16delft_data)/param/bin_params.yaml"                         ns ="/bin"  />
+	<rosparam command="load" file="$(find apc16delft_data)/param/tote_params.yaml"                        ns ="/tote" />
+</launch>

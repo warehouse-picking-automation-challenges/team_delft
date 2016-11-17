@@ -1,0 +1,32 @@
+staples_index_cards:
+    # PCL model.
+    model_path: "package://apc16delft_data/models/staples_index_cards.pcd"
+
+    # prune distance
+    reachability_prune_distance: 0.015
+
+    # pre-grasp offset
+    pre_grasp_offset: 0.05
+
+    # Center of Mass.
+    CoM:
+        position: {x: 0.0, y: 0.0, z: 0.0}
+
+    # List of sample spaces in which we can generate grasps.
+    sample_space:
+        - shape: "bar"
+          vacuum: True
+          generate: True
+          point_distance: 0.01
+          edge_clearing: 0.01
+          intersection_threshold: 0.02
+          dimensions: {x: 0.075, y: 0.128, z: 0.019}
+          origin:
+              position: {x: 0.0, y: 0.0, z: 0.0}
+              orientation: {r: 0.0, p: 0.0, y: 0.0}
+
+    difficulty: 0
+    bonus: 0
+    fragility:    'no'
+    weight:     'medium'
+    size:       'small'

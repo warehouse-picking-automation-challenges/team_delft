@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- start haf_grasp calculation SERVER -->
+	<node 	
+	    name="calc_grasppoints_svm_action_server" 
+		pkg="haf_grasping" 
+		type="calc_grasppoints_action_server">        
+    </node>
+
+	<!-- start haf_grasp calculation CLIENT -->
+	<node 	
+	    name="calc_grasppoints_svm_action_client" 
+		pkg="haf_grasping" 
+		type="calc_grasppoints_action_client"
+		output="screen">        
+    </node>
+
+	<!-- start rviz for visualization -->
+	<include file="$(find haf_grasping)/launch/rviz.launch"/>	
+	
+	
+	
+	<!-- PARAMETER DEFINITION -->
+	
+	<!-- define center position of area where grasps are searched -->
+	<rosparam param="grasp_search_center"> [-0.367,-0.397,0.0] </rosparam>
+	
+	<!-- define grasp search size, i.e. the region size where grasps are searched for; limit x: 0-18; limit y: 0-32 -->
+	<rosparam param="grasp_search_size_x"> 18 </rosparam>
+	<rosparam param="grasp_search_size_y"> 30 </rosparam>
+	
+	<!-- define approach direction of gripper (without gripper roll): moving direction is reversed (AV = (0,0,1) <=> gripper moving along -z-axis ) -->
+	<rosparam param="gripper_approach_vector"> [0,0,1] </rosparam>
+	
+	<!-- define maximal calculation time max_calculation_time for finding grasps -->
+	<rosparam param="max_calculation_time"> 40 </rosparam>
+	
+	<!-- define if only best grasp should be visualized or more (if evaluation is higher then threshold) -->
+	<rosparam param="show_only_best_grasp"> false </rosparam>
+	
+	<!-- define the topic for incoming point clouds -->
+	<rosparam param="input_pc_topic">/kinect2/hd/points</rosparam>
+	
+	<!-- define default frame for point cloud (if generated from pcd) -->
+	<rosparam param="base_frame">machine_jig_link</rosparam>
+	
+	<!-- define default gripper_width factor: if value is n, this means gripper is tested with 1/n times the max. gripper opening width -->
+	<rosparam param="gripper_width">1</rosparam>
+	
+	<!-- SVM Parameters -->
+	
+	<!-- define path of feature file for SVM grasp classification (MUST MATCH SVM CLASSIFICATION MODEL FILE AND RANGE FILE!!) -->
+	<!-- default: "$(find haf_grasping)/data/Features.txt" -->
+	<param name="feature_file_path" value="$(find haf_grasping)/data/Features.txt" />
+	
+	<!-- define number of haf_features (without symmetry features), all symmetry features have to be at the end of the Features file -->
+	<!-- default: 302 -->
+	<rosparam param="nr_features_without_shaf"> 302 </rosparam>
+		
+	<!-- define path relative to haf-package of range/scaling file for features (MUST MATCH FEATURE FILE AND SVM CLASSIFICATION MODEL!!) -->
+	<!-- default: "$(find haf_grasping)/data/range21062012_allfeatures" -->
+	<param name="range_file_path" value="$(find haf_grasping)/data/range21062012_allfeatures" />
+	
+	<!-- define path of SVM classifier (model) (MUST MATCH FEATURE FILE AND RANGE FILE!!) -->
+	<!-- default: "$(find haf_grasping)/data/all_features.txt.scale.model" -->
+	<param name="svmmodel_file_path" value="$(find haf_grasping)/data/all_features.txt.scale.model" />
+
+</launch>

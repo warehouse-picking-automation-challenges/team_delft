@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package format="2">
+	<name>apc16delft_coordinator</name>
+	<version>0.0.0</version>
+	<description>The apc16delft_coordinator package</description>
+	<license>Apache v2.0</license>
+
+	<maintainer email="j.e.t.tan@tudelft.nl">Jethro Tan</maintainer>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<depend>rospy</depend>
+</package>

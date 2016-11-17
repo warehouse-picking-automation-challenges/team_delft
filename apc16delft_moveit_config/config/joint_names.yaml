@@ -1,0 +1,1 @@
+controller_joint_names: ['rail_y', 'robot_joint_b', 'robot_joint_e', 'robot_joint_l', 'robot_joint_r', 'robot_joint_s', 'robot_joint_t', 'robot_joint_u']

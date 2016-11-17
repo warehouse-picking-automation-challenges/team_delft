@@ -1,0 +1,5 @@
+Object item                     # The item to place in the tote
+---
+int32 error                     # An error code or 0 for success.
+string message                  # A human readable error or success message.
+string place_pose				# The candidate tote pose (see master poses) to place the item

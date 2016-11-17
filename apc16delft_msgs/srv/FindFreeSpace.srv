@@ -1,0 +1,5 @@
+sensor_msgs/Image color              # A color image of the scene.
+sensor_msgs/PointCloud2 point_cloud  # A point cloud of the scene.
+int8[] objects                       # A list of expected objects. Each entry corrosponds to an object type. The same type may appear multiple times.
+---
+RotatedBox[] volumes                 # A list of volumes representing the free space where objects can be placed.

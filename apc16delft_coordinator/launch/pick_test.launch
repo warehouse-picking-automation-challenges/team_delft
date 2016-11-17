@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="verbose" default="true" />
+	<arg name="fake_output" value="screen"     if="$(arg verbose)" />
+	<arg name="fake_output" value="log"    unless="$(arg verbose)" />
+	<arg name="task_file" default="$(find apc16delft_data)/coordinator/apc_pick_task.json" />
+
+	<include file="$(find apc16delft_data)/launch/param.launch" />
+	<node type="apc16delft_fake_components_full_system" pkg="apc16delft_fake_components" name="full_system"  output="$(arg fake_output)" />
+
+	<include file="$(find apc16delft_description)/launch/manual.launch">
+		<arg name="rviz" value="false" />
+		<arg name="gui" value="false" />
+	</include>
+
+	<node type="pick_coordinator.py" pkg="apc16delft_coordinator" name="pick_coodinator" output="screen" required="true">
+		<param name="task_file" value="$(arg task_file)" />
+	</node>
+</launch>

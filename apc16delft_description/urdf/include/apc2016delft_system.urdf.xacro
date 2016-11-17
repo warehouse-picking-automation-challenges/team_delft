@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<robot name="apc16delft" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:property name="pi" value="3.1415926535897931" />
+<xacro:include filename="$(find motoman_sia_support)/urdf/sia20_macro.xacro" />
+
+<xacro:macro name="apc2016delft_system">
+
+<link name="world" />
+<material name="metal">
+	<color rgba="0.5 0.5 0.6 1" />
+</material>
+
+<!--
+<joint name="tote" type="fixed">
+	<parent link="world" />
+	<child link="tote" />
+	<origin xyz="0 0.4 0.6" />
+</joint>
+
+<link name="tote" type="fixed">
+	<visual>
+		<geometry>
+			<box size="0.610 0.381 0.203" />
+		</geometry>
+		<origin xyz="0 0 0.0" />
+	</visual>
+</link>
+-->
+
+<joint name="world_shelf" type="fixed">
+	<parent link="world" />
+	<child link="shelf" />
+	<origin xyz="0 1.06 0.03" />
+</joint>
+
+
+<joint name="rail_y_compressor_frame" type="fixed">
+	<parent link="rail_y" />
+	<child link="compressor_frame"/>
+	<origin xyz="-1.0 0.2635 0"/>
+</joint>
+
+<link name="compressor_frame">
+	<visual>
+		<geometry>
+			<mesh filename="package://apc16delft_description/meshes/compressor_frame.stl" />
+		</geometry>
+		<material name="metal" />
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://apc16delft_description/meshes/compressor_frame_collision.stl" />
+		</geometry>
+	</collision>
+</link>
+
+<joint name="rail_y_tote_frame" type="fixed">
+	<parent link="rail_y" />
+	<child link="tote_frame"/>
+	<origin xyz="0.41 0.42 0"/>
+</joint>
+
+<link name="tote_frame">
+	<visual>
+		<geometry>
+			<mesh filename="package://apc16delft_description/meshes/tote_camera_frame.stl" />
+		</geometry>
+		<material name="metal" />
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://apc16delft_description/meshes/tote_camera_frame_collision.stl" />
+		</geometry>
+	</collision>
+</link>
+
+<joint name="tote" type="fixed">
+	<parent link="tote_frame" />
+	<child link="tote" />
+	<origin xyz="0.03 1.02 0.8" rpy="${-0.5 * pi} 0 ${-0.5 * pi}" />
+</joint>
+
+<link name="tote" />
+
+<joint name="tote_camera_depth" type="fixed">
+	<parent link="tote_frame" />
+	<child link="tote_camera_depth"/>
+	<origin xyz="0.252 0.703 2.122" rpy="0 ${pi} ${-0.5 * pi}"/>
+</joint>
+
+<link name="tote_camera_depth"/>
+
+<link name="shelf">
+	<visual>
+		<geometry>
+			<mesh filename="package://apc16delft_description/meshes/shelf_visual.dae" />
+		</geometry>
+	</visual>
+	<!--collision>
+		<geometry>
+			<mesh filename="package://apc16delft_description/meshes/shelf_collision.stl" />
+		</geometry>
+	</collision-->
+</link>
+
+<joint name="world_rail_y" type="fixed">
+	<parent link="world" />
+	<child link="rail_y" />
+	<origin xyz="0 -1.6 0.0" />
+</joint>
+
+<link name="rail_y">
+	<visual>
+		<geometry>
+			<mesh filename="package://apc16delft_description/meshes/rails.stl" />
+		</geometry>
+		<origin xyz="0 0.0 0.0" rpy="0 0 ${0.5 * pi}" />
+		<material name="metal" />
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://apc16delft_description/meshes/rails_collision.stl" />
+		</geometry>
+		<origin xyz="0 0.0 0.0" rpy="0 0 ${0.5 * pi}" />
+	</collision>
+	<xacro:cylinder_inertial radius="0.40" length="2.0" mass="750">
+		<origin rpy="${0.5 * pi} 0 0" xyz="0 1.0 0.10" />
+	</xacro:cylinder_inertial>
+</link>
+
+<joint name="rail_y" type="prismatic">
+	<parent link="rail_y" />
+	<child link="frame" />
+	<axis xyz="0 1 0" />
+	<origin xyz="0 0.46 0.88" />
+	<limit lower="0.05" upper="1.15" effort="10" velocity="1" />
+</joint>
+
+<link name="frame">
+	<visual>
+		<geometry>
+			<mesh filename="package://apc16delft_description/meshes/support.stl" />
+		</geometry>
+		<origin xyz = "0.0 -0.66 -0.88" rpy="0 0 ${0.5 * pi}" />
+		<material name="metal" />
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://apc16delft_description/meshes/support.stl" />
+		</geometry>
+		<origin xyz = "0.0 -0.66 -0.88" rpy="0 0 ${0.5 * pi}" />
+	</collision>
+	<xacro:cylinder_inertial radius="0.3" length="0.60" mass="100">
+		<origin rpy="0 0 0" xyz="0 -0.03 -0.35" />
+	</xacro:cylinder_inertial>
+</link>
+
+<joint name="robot_joint" type="fixed">
+	<parent link="frame" />
+	<child link="robot_base_link" />
+	<origin xyz = "0.0 0.0 0.0" rpy="0 0 ${0.5 * pi}" />
+</joint>
+
+<xacro:motoman_sia20 prefix="robot_" />
+
+<joint name="gripper" type="fixed">
+	<parent link="robot_tool0" />
+	<child link="gripper_body" />
+	<origin xyz = "0.0 0.0 0.028" rpy="0 0 ${-0.5 * pi}" />
+</joint>
+
+<xacro:apc16delft_gripper prefix="gripper_" />
+
+<xacro:property name="gripper_length" value="0.42" />
+<xacro:property name="gripper_radius" value="0.035" />
+
+<joint name="gripper_tip_joint" type="fixed">
+	<parent link="gripper_body" />
+	<child link="gripper_tip" />
+	<origin xyz="0 0.008 0.423" rpy="0 0 0" />
+</joint>
+
+<link name="gripper_tip"/>
+</xacro:macro>
+
+</robot>

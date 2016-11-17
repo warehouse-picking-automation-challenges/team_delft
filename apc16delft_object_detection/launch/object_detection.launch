@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="fake_vision" default="true" />
+	<arg name="name"                       />
+
+	<group if="$(arg fake_vision)">
+		<!-- Start the fake object detection server. -->
+		<node name="$(arg name)_detection" type="apc16delft_fake_components_vision" pkg="apc16delft_fake_components" output="screen" />
+	</group>
+
+	<group unless="$(arg fake_vision)">
+		<!-- Start object detection server. -->
+		<node name="$(arg name)_detection" pkg="apc16delft_object_detection" type="object_detection_server.py" output="screen">
+			<param name="caffe_model" value="$(find apc16delft_data)/object_detection/apc_$(arg name).caffemodel" />
+			<param name="prototxt" value="$(find apc16delft_data)/object_detection/test.prototxt" />
+			<param name="visualize" value="true" />
+			<param name="bin_margin/x" value="0.05" />
+			<param name="bin_margin/y" value="0.05" />
+			<param name="bin_margin/z" value="0.05" />
+		</node>
+	</group>
+</launch>
+

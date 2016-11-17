@@ -1,0 +1,13 @@
+apc16delft_msgs/Object object          # The object we are filtering.
+geometry_msgs/Pose pose                # The pose of the object in scene.
+sensor_msgs/PointCloud2 scene          # The input scene point cloud.
+apc16delft_msgs/CropBox2D crop_box     # Information for cropping a boundingbox.
+---
+sensor_msgs/PointCloud2 filtered_scene # The filtered scene.
+apc16delft_msgs/Error error
+
+#int32 E_SRV_BASE         = 11500
+int32 E_SCENE_EMPTY       = 11501
+int32 E_INVALID_OBJECT    = 11502
+int32 E_NO_MODEL          = 11503
+int32 E_BOUNDING_BOX_CROP = 11504

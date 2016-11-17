@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+	<name>apc16delft_simulation</name>
+	<version>0.0.0</version>
+	<description>The apc16delft_simulation package</description>
+	<license>Apache v2.0</license>
+
+	<maintainer email="j.a.vanegmond@tudelft.nl">Jeff van Egmond</maintainer>
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<depend>apc16delft_moveit_config</depend>
+	<depend>industrial_robot_simulator</depend>
+	<depend>robot_state_publisher</depend>
+</package>

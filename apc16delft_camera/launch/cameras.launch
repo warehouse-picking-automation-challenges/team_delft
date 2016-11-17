@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="fake"         default="true" />
+	<arg name="fake_gripper" default="$(arg fake)" />
+	<arg name="fake_tote"    default="$(arg fake)" />
+	<arg name="fake_gripper_image" default="$(find apc16delft_fake_components)/data/image.png" />
+	<arg name="fake_gripper_cloud" default="$(find apc16delft_fake_components)/data/cloud.pcd" />
+	<arg name="fake_tote_image"    default="$(find apc16delft_fake_components)/data/tote.png" />
+	<arg name="fake_tote_cloud"    default="$(find apc16delft_fake_components)/data/tote.pcd" />
+
+	<!-- Gripper camera -->
+	<include file="$(find apc16delft_camera)/launch/gripper.launch">
+		<arg name="fake"       value="$(arg fake_gripper)" />
+		<arg name="fake_image" value="$(arg fake_gripper_image)" />
+		<arg name="fake_cloud" value="$(arg fake_gripper_cloud)" />
+	</include>
+
+	<!-- Tote camera -->
+	<include file="$(find apc16delft_camera)/launch/tote.launch">
+		<arg name="fake"       value="$(arg fake_tote)" />
+		<arg name="fake_image" value="$(arg fake_tote_image)" />
+		<arg name="fake_cloud" value="$(arg fake_tote_cloud)" />
+	</include>
+</launch>
+

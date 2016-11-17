@@ -1,0 +1,54 @@
+fitness_gear_3lb_dumbbell:
+    # PCL model.
+    model_path: "package://apc16delft_data/models/fitness_gear_3lb_dumbbell.pcd"
+
+    # prune distance
+    reachability_prune_distance: 0.001
+
+    # pre-grasp offset
+    pre_grasp_offset: 0.03
+
+    # Center of Mass.
+    CoM:
+        position: {x: 0.0, y: 0.0, z: 0.0}
+
+    # List of sample spaces in which we can generate grasps.
+    sample_space:
+        - shape: "circle"
+          radius: 0.01
+          point_distance: 0.001
+          intersection_threshold: 0.02
+          strategy: 5
+          vacuum: false
+          generate: true
+          direction: 3
+          origin:
+              position: {x: 0.0, y: 0.0, z: 0.0}
+              orientation: {r: 0.0, p: 1.5708, y: 0.0}
+        - shape: "circle"
+          radius: 0.035
+          point_distance: 0.001
+          intersection_threshold: 0.02
+          strategy: 4
+          vacuum: false
+          generate: true
+          direction: 3
+          origin:
+              position: {x: 0.038, y: 0.0, z: 0.0}
+              orientation: {r: 0.0, p: 1.5708, y: 0.0}
+        - shape: "circle"
+          radius: 0.035
+          point_distance: 0.001
+          intersection_threshold: 0.02
+          strategy: 4
+          vacuum: false
+          generate: true
+          direction: 3
+          origin:
+              position: {x: -0.038, y: 0.0, z: 0.0}
+              orientation: {r: 0.0, p: 1.5708, y: 0.0}
+    difficulty: 0
+    bonus: 3
+    fragility:    'no'
+    weight:     'high'
+    size:       'medium'

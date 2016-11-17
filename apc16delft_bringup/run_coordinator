@@ -1,0 +1,4 @@
+#!/bin/sh
+file="$HOME/.ros/coordinator_log/coordinator-$(date +%Y-%m-%d-%H-%M-%S).log"
+mkdir -p "$(dirname "$file")"
+roslaunch apc16delft_bringup coordinator.launch 2>&1 | tee -a "$file"

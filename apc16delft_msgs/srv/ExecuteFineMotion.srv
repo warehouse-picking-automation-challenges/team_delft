@@ -1,0 +1,5 @@
+trajectory_msgs/JointTrajectory trajectory # The trajectory to execute.
+---
+Error error
+
+#int32 E_SRV_BASE = 10600

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- include your robot moveit configuration -->
+  <include file="$(find apc16delft_moveit_config)/launch/demo.launch"/>
+
+  <arg name="plane_region" default="true"/>
+  <arg name="file" default="workspace_analysis_results.txt"/>
+  <arg name="namespace" default="ws_analysis"/>
+
+  <group ns="$(arg namespace)">
+    <node name="moveit_workspace_analysis" pkg="moveit_workspace_analysis" type="workspace_analysis_node" respawn="false" output="screen">
+
+      <!-- parameters for IK analysis -->
+      <param name="min_x" value="-0.45" />
+      <param name="max_x" value="0.45" />
+      <param name="res_x" value="0.05" />
+      <param name="res_y" value="0.05" />
+      <param name="res_z" value="0.05" />
+
+      <param name="min_y" value="0.6" if="$(arg plane_region)"/>
+      <param name="min_y" value="0.6" unless="$(arg plane_region)"/>
+
+      <param name="max_y" value="1.5" if="$(arg plane_region)"/>
+      <param name="max_y" value="1.5" unless="$(arg plane_region)"/>
+
+      <param name="min_z" value="0.7" if="$(arg plane_region)"/>
+      <param name="min_z" value="0.7" unless="$(arg plane_region)"/>
+
+      <param name="max_z" value="1.8" if="$(arg plane_region)"/>
+      <param name="max_z" value="1.8" unless="$(arg plane_region)"/>
+
+      <!-- parameters for FK analysis -->
+      <param name="max_attempts" value="500" />
+
+      <!-- group name, it  must exist in the moveit configuration you include above -->
+      <param name="group_name" value="manipulator" />
+
+      <param name="joint_limits_penalty_multiplier" value="0.0" />
+
+      <!-- result file parameter -->
+      <param name="filename" value="$(find moveit_workspace_analysis)/$(arg file)" />
+      <param name="quat_filename" value="$(find moveit_workspace_analysis)/quaternions/data.qua" />
+
+    </node>
+  </group>
+
+</launch>

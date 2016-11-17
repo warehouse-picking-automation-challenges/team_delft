@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot name="apc16delft" xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<group name="manipulator">
+		<chain base_link="robot_base_link" tip_link="robot_tool0" />
+	</group>
+	<group_state name="home" group="manipulator">
+		<joint name="robot_joint_b" value="0" />
+		<joint name="robot_joint_e" value="0" />
+		<joint name="robot_joint_l" value="0" />
+		<joint name="robot_joint_r" value="0" />
+		<joint name="robot_joint_s" value="0" />
+		<joint name="robot_joint_t" value="0" />
+		<joint name="robot_joint_u" value="0" />
+	</group_state>
+
+	<disable_collisions link1="rail_z"          link2="frame"           reason="Adjecent" />
+	<disable_collisions link1="frame"           link2="robot_base_link" reason="Adjecent" />
+	<disable_collisions link1="rail_z"          link2="robot_base_link" reason="Adjecent" />
+	<disable_collisions link1="robot_base_link" link2="robot_link_e"    reason="Never"    />
+	<disable_collisions link1="robot_base_link" link2="robot_link_l"    reason="Never"    />
+	<disable_collisions link1="robot_base_link" link2="robot_link_s"    reason="Adjacent" />
+	<disable_collisions link1="robot_link_b"    link2="robot_link_e"    reason="Never"    />
+	<disable_collisions link1="robot_link_b"    link2="robot_link_l"    reason="Never"    />
+	<disable_collisions link1="robot_link_b"    link2="robot_link_r"    reason="Adjacent" />
+	<disable_collisions link1="robot_link_b"    link2="robot_link_t"    reason="Adjacent" />
+	<disable_collisions link1="robot_link_b"    link2="robot_link_u"    reason="Never"    />
+	<disable_collisions link1="robot_link_e"    link2="robot_link_l"    reason="Adjacent" />
+	<disable_collisions link1="robot_link_e"    link2="robot_link_r"    reason="Never"    />
+	<disable_collisions link1="robot_link_e"    link2="robot_link_s"    reason="Never"    />
+	<disable_collisions link1="robot_link_e"    link2="robot_link_t"    reason="Never"    />
+	<disable_collisions link1="robot_link_e"    link2="robot_link_u"    reason="Adjacent" />
+	<disable_collisions link1="robot_link_l"    link2="robot_link_r"    reason="Never"    />
+	<disable_collisions link1="robot_link_l"    link2="robot_link_s"    reason="Adjacent" />
+	<disable_collisions link1="robot_link_l"    link2="robot_link_t"    reason="Never"    />
+	<disable_collisions link1="robot_link_l"    link2="robot_link_u"    reason="Never"    />
+	<disable_collisions link1="robot_link_r"    link2="robot_link_s"    reason="Never"    />
+	<disable_collisions link1="robot_link_r"    link2="robot_link_t"    reason="Never"    />
+	<disable_collisions link1="robot_link_r"    link2="robot_link_u"    reason="Adjacent" />
+	<disable_collisions link1="robot_link_s"    link2="robot_link_u"    reason="Never"    />
+	<disable_collisions link1="robot_link_t"    link2="robot_link_u"    reason="Never"    />
+</robot>

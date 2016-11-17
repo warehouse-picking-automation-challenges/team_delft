@@ -1,0 +1,55 @@
+dr_browns_bottle_brush:
+    # PCL model.
+    model_path: "package://apc16delft_data/models/dr_browns_bottle_brush.pcd"
+
+    # prune distance
+    reachability_prune_distance: 0.015
+
+    # pre-grasp offset
+    pre_grasp_offset: 0.05
+
+    # Center of Mass.
+    CoM:
+        position: {x: 0.0, y: 0.0, z: 0.0}
+
+    # List of sample spaces in which we can generate grasps.
+    # rpy follows z-y-x convention in degrees.
+    sample_space:
+        - shape: "bar"
+          vacuum: True
+          generate: True
+          point_distance: 0.02
+          edge_clearing: 0.02
+          intersection_threshold: 0.02
+          dimensions: {x: 0.105, y: 0.305, z: 0.01}
+          origin:
+              position: {x: 0.0, y: 0.0, z: 0.0}
+              orientation: {r: 0.0, p: 0.0, y: 0.0}
+
+        - shape: "cylinder"
+          vacuum: True
+          generate: True
+          point_distance: 0.02
+          edge_clearing: 0.02
+          intersection_threshold: 0.02
+          dimensions: {radius: 0.03, height: 0.125}
+          origin:
+              position: {x: 0.0, y: 0.065, z: 0.0}
+              orientation: {r: 0.0, p: 1.5707, y: 1.5707}
+
+        - shape: "cylinder"
+          vacuum: True
+          generate: False
+          point_distance: 0.02
+          edge_clearing: 0.02
+          intersection_threshold: 0.02
+          dimensions: {radius: 0.0125, height: 0.16}
+          origin:
+              position: {x: 0.0, y: -0.07, z: 0.0}
+              orientation: {r: 0.0, p: 1.5707, y: 1.5707}
+
+    difficulty: 0
+    bonus: 2
+    fragility:  'yes'
+    weight:     'low'
+    size:       'medium'

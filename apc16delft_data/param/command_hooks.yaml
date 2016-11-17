@@ -1,0 +1,42 @@
+command_hooks:
+    # PCL model.
+    model_path: "package://apc16delft_data/models/command_hooks.pcd"
+
+    # prune distance
+    reachability_prune_distance: 0.015
+
+    # pre-grasp offset
+    pre_grasp_offset: 0.05
+
+    # Center of Mass.
+    CoM:
+        position: {x: 0.0, y: -0.029, z: 0.0}
+
+    # List of sample spaces in which we can generate grasps.
+    sample_space:
+        - shape: "bar"
+          vacuum: True
+          generate: True
+          point_distance: 0.01
+          edge_clearing: 0.02
+          intersection_threshold: 0.0005
+          dimensions: {x: 0.123, y: 0.167, z: 0.002}
+          origin:
+              position: {x: 0.0, y: 0.0, z: -0.010}
+              orientation: {r: 0.0, p: 0.0, y: 0.0}
+        - shape: "bar"
+          vacuum: True
+          generate: True
+          point_distance: 0.01
+          edge_clearing: 0.015
+          intersection_threshold: 0.005
+          dimensions: {x: 0.10, y: 0.095, z: 0.042}
+          origin:
+              position: {x: 0.0, y: -0.0145, z: 0.0}
+              orientation: {r: 0.0, p: 0.0, y: 0.0}
+
+    difficulty: 0
+    bonus: 0
+    fragility:  'yes'
+    weight:     'low'
+    size:       'small'

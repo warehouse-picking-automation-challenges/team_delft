@@ -1,0 +1,32 @@
+barkely_hide_bones:
+    # PCL model.
+    model_path: "package://apc16delft_data/models/barkely_hide_bones.pcd"
+
+    # prune distance
+    reachability_prune_distance: 0.015
+
+    # pre-grasp offset
+    pre_grasp_offset: 0.05
+
+    # Center of Mass.
+    CoM:
+        position: {x: 0.0, y: 0.0, z: 0.0}
+
+    # List of sample spaces in which we can generate grasps.
+    sample_space:
+        - shape: "bar"
+          point_distance: 0.02
+          edge_clearing: 0.02
+          vacuum: True
+          generate: True
+          intersection_threshold: 0.02
+          dimensions: {x: 0.085, y: 0.115, z: 0.04}
+          origin:
+              position: {x: 0.0, y: 0.0, z: 0.0}
+              orientation: {r: 0.0, p: 0.0, y: 0.0}
+
+    difficulty: 0
+    bonus: 0
+    fragility:  'no'
+    weight:     'low'
+    size:       'small'

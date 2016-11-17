@@ -1,0 +1,34 @@
+#TODO: Use Error message type for output
+#int32 E_SRV_BASE = 10000
+Number    SRV filename                      Remark
+100xx     AddCollisionObject                Should use Error for output or has no error handling, unclear.
+101xx     CheckPathValidity                 Should use Error for output
+          CropPointCloud                    No error handling
+          DetectObject                      No error handling
+114xx     DetectOcclusion                   Error handling in place
+115xx     EstimateBinDensity                Error handling in place
+102xx     EstimateBinPose                   Error handling in place, names incorrect
+103xx     EstimateObjectPose                No error numbers defined yet
+104xx     ExecuteCalibrationMotion          Should use Error for output or has no error handling, unclear.
+105xx     ExecuteCoarseMotion               Should use Error for output
+106xx     ExecuteFineMotion                 Should use Error for output
+115xx     FilterObject                      No error handling
+          FinalizeCalibration               No error handling
+          FindFreeSpace                     No error handling
+          GetCameraData                     No error handling
+          GetPose                           No error handling
+          GetRobotPose                      No error handling
+          InitializeCalibration             No error handling
+107xx     MoveToCalibrateShelf              Should use Error for output or has no error handling, unclear.
+108xx     MoveToCalibrateTote               Should use Error for output or has no error handling, unclear.
+109xx     MoveToHome                        Should use Error for output or has no error handling, unclear.
+          PlanCartesianGraspPath            No error handling
+          PruneGraspCandidates              No error handling
+          PublishStaticPointCloud           No error handling
+          RecordCalibration                 No error handling
+110xx     RequestTransition                 Has a result code which is unclear.
+111xx     SetGripperState                   Should use Error for output
+116xx     SynthesizeDeformable              Should use Error for output
+112xx     SynthesizeGrasp                   Should use Error for output
+113xx     SynthesizePlacement               Should use Error for output
+117xx     SynthesizeStow                    Has not defined any error codes yet.

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="fake_pose_estimator" default="true" />
+
+	<group if="$(arg fake_pose_estimator)">
+		<!-- Start the fake pose estimation node. -->
+		<node name="pose_estimation" pkg="apc16delft_fake_components" type="apc16delft_fake_components_pose_estimation" output="screen">
+			<param name="bin_model_path" value="$(find apc16delft_data)/models/bin_model.pcd" />
+		</node>
+	</group>
+
+	<group unless="$(arg fake_pose_estimator)">
+		<include file="$(find super4pcs)/launch/super4pcs.launch" />
+	</group>
+</launch>
+

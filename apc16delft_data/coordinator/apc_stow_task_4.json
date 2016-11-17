@@ -1,0 +1,76 @@
+{
+    "bin_contents": {
+        "bin_A": [
+            "ticonderoga_12_pencils"
+        ],
+        "bin_B": [
+            "scotch_duct_tape",
+            "peva_shower_curtain_liner"
+        ],
+        "bin_C": [
+            "staples_index_cards",
+            "oral_b_toothbrush_red",
+            "easter_turtle_sippy_cup"
+        ],
+        "bin_D": [
+            "scotch_bubble_mailer",
+            "woods_extension_cord"
+        ],
+        "bin_E": [
+            "clorox_utility_brush"
+        ],
+        "bin_F": [
+            "scotch_duct_tape",
+            "kyjen_squeakin_eggs_plush_puppies"
+        ],
+        "bin_G": [
+            "fitness_gear_3lb_dumbbell",
+            "elmers_washable_no_run_school_glue",
+            "command_hooks",
+            "folgers_classic_roast_coffee",
+            "rawlings_baseball",
+            "cool_shot_glue_sticks",
+            "cherokee_easy_tee_shirt"
+        ],
+        "bin_H": [
+            "oral_b_toothbrush_green",
+            "platinum_pets_dog_bowl",
+            "crayola_24_ct",
+            "kleenex_tissue_box",
+            "fiskars_scissors_red"
+        ],
+        "bin_I": [
+            "expo_dry_erase_board_eraser"
+        ],
+        "bin_J": [
+            "dasani_water_bottle",
+            "up_glucose_bottle",
+            "barkely_hide_bones",
+            "creativity_chenille_stems",
+            "womens_knit_gloves"
+        ],
+        "bin_K": [
+            "expo_dry_erase_board_eraser",
+            "cloud_b_plush_bear",
+            "jane_eyre_dvd"
+        ],
+        "bin_L": [
+            "soft_white_lightbulb",
+            "laugh_out_loud_joke_book"
+        ]
+    },
+    "tote_contents": [
+        "staples_index_cards",
+        "creativity_chenille_stems",
+        "dasani_water_bottle",
+        "dr_browns_bottle_brush",
+        "elmers_washable_no_run_school_glue",
+        "safety_first_outlet_plugs",
+        "dove_beauty_bar",
+        "rolodex_jumbo_pencil_cup",
+        "i_am_a_bunny_book",
+        "scotch_bubble_mailer",
+        "hanes_tube_socks",
+        "kleenex_paper_towels"
+    ]
+}

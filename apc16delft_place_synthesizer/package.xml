@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>apc16delft_place_synthesizer</name>
+  <version>0.0.0</version>
+  <description>The apc16delft_place_synthesizer package</description>
+  <maintainer email="j.a.vanegmond@tudelft.nl">Jeff van Egmond</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>apc16delft_msgs</depend>
+  <depend>apc16delft_util</depend>
+  <depend>roscpp</depend>
+  <depend>dr_eigen</depend>
+  <depend>dr_param</depend>
+</package>

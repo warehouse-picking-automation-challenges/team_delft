@@ -1,0 +1,76 @@
+{
+    "bin_contents": {
+        "bin_A": [
+            "rawlings_baseball",
+            "i_am_a_bunny_book"
+        ],
+        "bin_B": [
+            "ticonderoga_12_pencils",
+            "rolodex_jumbo_pencil_cup",
+            "up_glucose_bottle",
+            "kyjen_squeakin_eggs_plush_puppies",
+            "soft_white_lightbulb"
+        ],
+        "bin_C": [
+            "elmers_washable_no_run_school_glue",
+            "fiskars_scissors_red",
+            "oral_b_toothbrush_green",
+            "dr_browns_bottle_brush",
+            "fitness_gear_3lb_dumbbell"
+        ],
+        "bin_D": [
+            "woods_extension_cord",
+            "safety_first_outlet_plugs"
+        ],
+        "bin_E": [
+            "creativity_chenille_stems",
+            "scotch_bubble_mailer",
+            "jane_eyre_dvd",
+            "dove_beauty_bar",
+            "crayola_24_ct",
+            "scotch_duct_tape",
+            "kleenex_tissue_box"
+        ],
+        "bin_F": [
+            "command_hooks",
+            "peva_shower_curtain_liner",
+            "easter_turtle_sippy_cup"
+        ],
+        "bin_G": [
+            "oral_b_toothbrush_red"
+        ],
+        "bin_H": [
+            "dasani_water_bottle"
+        ],
+        "bin_I": [
+            "barkely_hide_bones",
+            "staples_index_cards",
+            "expo_dry_erase_board_eraser"
+        ],
+        "bin_J": [
+            "clorox_utility_brush",
+            "kleenex_paper_towels"
+        ],
+        "bin_K": [
+            "cool_shot_glue_sticks"
+        ],
+        "bin_L": [
+            "dasani_water_bottle",
+            "folgers_classic_roast_coffee"
+        ]
+    },
+    "tote_contents": [
+        "elmers_washable_no_run_school_glue",
+        "scotch_bubble_mailer",
+        "laugh_out_loud_joke_book",
+        "cloud_b_plush_bear",
+        "expo_dry_erase_board_eraser",
+        "cherokee_easy_tee_shirt",
+        "womens_knit_gloves",
+        "creativity_chenille_stems",
+        "platinum_pets_dog_bowl",
+        "hanes_tube_socks",
+        "scotch_duct_tape",
+        "staples_index_cards"
+    ]
+}

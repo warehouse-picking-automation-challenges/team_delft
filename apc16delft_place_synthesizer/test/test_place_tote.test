@@ -1,0 +1,12 @@
+<launch>
+
+	<!-- Load item parameters to param server. -->
+	<include file="$(find apc16delft_data)/launch/param.launch" />
+
+	<!-- NODE TO TEST: -->
+	<node name="place_syn_tote" pkg="apc16delft_place_synthesizer" type="place_syn_tote.py" output="screen"/>
+
+	<!-- Runs the tests -->
+	<test test-name="test_tote_placement" pkg="apc16delft_place_synthesizer" type="test_tote_placement.py" />
+
+</launch>

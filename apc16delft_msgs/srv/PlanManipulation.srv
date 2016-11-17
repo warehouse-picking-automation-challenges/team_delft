@@ -1,0 +1,14 @@
+int32 E_COLLISION          = 1
+int32 E_OBJECT_OUTSIDE_BIN = 2
+int32 E_INVALID_BIN        = 3
+int32 E_INVALID_STRATEGY   = 4
+
+int8 bin_index                             # The index of the current bin.
+uint8 object_type                          # The object to plan a grasp for.
+apc16delft_msgs/GraspCandidate grasp       # The grasp to plan a path for.
+geometry_msgs/PoseStamped object_pose      # The current pose of the item.
+geometry_msgs/PoseStamped bin_pose         # The current bin pose.
+---
+Error error
+trajectory_msgs/JointTrajectory trajectory # The trajectory.
+apc16delft_msgs/Milestone[] milestones     # The milestones within the trajectory.
