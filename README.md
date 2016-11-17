@@ -15,7 +15,6 @@ Dependencies
 * [dr_eigen](https://github.com/delftrobotics/dr_eigen)
 * [ensenso SDK] (http://www.ensenso.com/support/sdk-download/)
 * [trac_ik](https://bitbucket.org/traclabs/trac_ik.git)
-   * required for trac_ik: $ sudo apt-get install libnlopt-dev
 
 
 Usage
